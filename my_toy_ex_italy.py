@@ -212,12 +212,12 @@ plt.tight_layout()
 # saved in file output/long_term_uc/figures/prod_italy_{year}_{period start, under format %Y-%m-%d}.png
 network.generators_t.p.div(1e3).plot.area(subplots=False, ylabel="GW")
 from long_term_uc.common.long_term_uc_io import get_prod_figure, get_price_figure
-plt.savefig(get_prod_figure(country=country, year=year, start_horizon=uc_run_params.uc_period_start))
 plt.tight_layout()
+plt.savefig(get_prod_figure(country=country, year=year, start_horizon=uc_run_params.uc_period_start))
 
 # IV.8.3) Finally, "marginal prices" -> QUESTION: meaning? 
 # -> saved in file output/long_term_uc/figures/prices_italy_{year}_{period start, under format %Y-%m-%d}.png
 # QUESTION: how can you interpret the very constant value plotted?
 network.buses_t.marginal_price.mean(1).plot.area(figsize=(8, 3), ylabel="Euro per MWh")
-plt.savefig(get_price_figure(country=country, year=year, start_horizon=uc_run_params.uc_period_start))
 plt.tight_layout()
+plt.savefig(get_price_figure(country=country, year=year, start_horizon=uc_run_params.uc_period_start))
