@@ -1,0 +1,54 @@
+{
+    "team": "iberian-peninsula",
+    "selected_prod_types": {
+      "iberian-peninsula": ["all"]
+    },
+    "updated_capacities_prod_types": {
+      "italy": {
+        "wind_offshore":30000,
+        "wind_onshore":30000,
+        "dsr":2000,
+        "failure":40000.0
+      },
+      "germany": {
+        "wind_onshore":30000,
+        "gas":10000,
+        "dsr":5000,
+        "failure":40000.0
+      },
+      "poland": {
+        "wind_onshore":30000,
+        "gas":20000,
+        "wind_offshore":10000,
+        "failure":40000.0
+      },
+      "scandinavia": {
+        "wind_offshore":30000,
+        "wind_onshore":30000,
+        "others_fatal":10000,
+        "biofuel":2000,
+        "failure":40000.0
+      },
+      "benelux": {
+        "wind_offshore":30000,
+        "wind_onshore":30000,
+        "nuclear":20000,
+        "dsr":3000,
+        "failure":40500.0
+      },
+      "iberian-peninsula":{
+        "wind_offshore":30000,
+        "wind_onshore":30000,
+        "nuclear":15000,
+        "dsr":5000,
+        "solar_pv":30000,
+        "failure":40000.0
+      },
+      "france": {
+        "wind_offshore":30000,
+        "wind_onshore":30000,
+        "dsr":2000,
+        "failure":5000.0
+      }   
+  }
+}
