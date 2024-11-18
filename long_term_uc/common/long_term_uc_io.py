@@ -82,21 +82,39 @@ def get_json_eraa_avail_values_file() -> str:
 def get_json_params_tb_modif_file() -> str:
     return os.path.join(INPUT_LT_UC_SUBFOLDER, "elec-europe_params_to-be-modif.json")
 
+
 def get_json_params_modif_country_files():
     return map(
         lambda x: os.path.join(INPUT_LT_UC_COUNTRY_SUBFOLDER, x),
         filter(lambda x: x.endswith('.json'),
                os.listdir(INPUT_LT_UC_COUNTRY_SUBFOLDER)))
 
+
 def get_json_pypsa_static_params_file() -> str:
     return os.path.join(INPUT_LT_UC_SUBFOLDER, "pypsa_static_params.json") 
+
 
 def get_network_figure() -> str:
     return f"{OUTPUT_FIG_FOLDER}/network.png"
 
-def get_prod_figure(country: str, year: int, start_horizon: datetime) -> str:
-    return f"{OUTPUT_FIG_FOLDER}/prod_{country}_{year}_{start_horizon.strftime(DATE_FORMAT_FILE)}.png"
+
+def get_output_file_suffix(country: str, year: int, climatic_year: int, start_horizon: datetime) -> str:
+    return f"{country}_{year}_cy{climatic_year}_{start_horizon.strftime(DATE_FORMAT_FILE)}"
 
 
-def get_price_figure(country: str, year: int, start_horizon: datetime) -> str:
-    return f"{OUTPUT_FIG_FOLDER}/prices_{country}_{year}_{start_horizon.strftime(DATE_FORMAT_FILE)}.png"
+def get_prod_figure(country: str, year: int, climatic_year: int, start_horizon: datetime) -> str:
+    file_suffix = get_output_file_suffix(country=country, year=year, climatic_year=climatic_year,
+                                         start_horizon=start_horizon)
+    return f"{OUTPUT_FIG_FOLDER}/prod_{file_suffix}.png"
+
+
+def get_price_figure(country: str, year: int, climatic_year: int, start_horizon: datetime) -> str:
+    file_suffix = get_output_file_suffix(country=country, year=year, climatic_year=climatic_year,
+                                         start_horizon=start_horizon)
+    return f"{OUTPUT_FIG_FOLDER}/prices_{file_suffix}.png"
+
+
+def get_opt_power_file(country: str, year: int, climatic_year: int, start_horizon: datetime) -> str:
+    file_suffix = get_output_file_suffix(country=country, year=year, climatic_year=climatic_year,
+                                         start_horizon=start_horizon)
+    return f"{OUTPUT_DATA_FOLDER}/opt_p_{file_suffix}.csv"

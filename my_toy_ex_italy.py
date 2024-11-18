@@ -43,11 +43,11 @@ AGG_PROD_TYPES_DEF = {
 country = "italy"
 # select first ERAA year available, as an example 
 # -> see values in input/long_term_uc/elec-europe_eraa-available-values.json
-year = 2025
+year = 2025  # Can be changed -> available values [2025, 2033]
 # and a given "climatic year" (to possibly test different climatic*weather conditions)
 # -> idem
 # N.B. Ask Boutheina OUESLATI on Wednesday to get an idea of the 'climatic' versus 'weather' conditions 
-climatic_year = 1989
+climatic_year = 1989  # Can be changed -> available values [1982, 1989, 1996, 2003, 2010, 2016]
 # TODO: used?
 agg_prod_types_selec = ["wind_onshore", "wind_offshore", "solar_pv"]
 
@@ -211,13 +211,23 @@ plt.tight_layout()
 # IV.8.2) And "stack" of optimized production profiles -> key graph to interpret UC solution -> will be 
 # saved in file output/long_term_uc/figures/prod_italy_{year}_{period start, under format %Y-%m-%d}.png
 network.generators_t.p.div(1e3).plot.area(subplots=False, ylabel="GW")
-from long_term_uc.common.long_term_uc_io import get_prod_figure, get_price_figure
+from long_term_uc.common.long_term_uc_io import get_prod_figure, get_price_figure, get_opt_power_file
 plt.tight_layout()
-plt.savefig(get_prod_figure(country=country, year=year, start_horizon=uc_run_params.uc_period_start))
+plt.savefig(get_prod_figure(country=country, year=year, climatic_year=climatic_year, 
+                            start_horizon=uc_run_params.uc_period_start)
+                            )
 
 # IV.8.3) Finally, "marginal prices" -> QUESTION: meaning? 
 # -> saved in file output/long_term_uc/figures/prices_italy_{year}_{period start, under format %Y-%m-%d}.png
 # QUESTION: how can you interpret the very constant value plotted?
 network.buses_t.marginal_price.mean(1).plot.area(figsize=(8, 3), ylabel="Euro per MWh")
 plt.tight_layout()
-plt.savefig(get_price_figure(country=country, year=year, start_horizon=uc_run_params.uc_period_start))
+plt.savefig(get_price_figure(country=country, year=year, climatic_year=climatic_year, 
+                             start_horizon=uc_run_params.uc_period_start)
+                             )
+
+# IV.9) Save optimal decision to an output file
+print("Save optimal dispatch decisions to .csv file")
+opt_p_csv_file = get_opt_power_file(country=country, year=year, climatic_year=climatic_year, 
+                                    start_horizon=uc_run_params.uc_period_start)
+network.generators_t.p.to_csv(opt_p_csv_file)

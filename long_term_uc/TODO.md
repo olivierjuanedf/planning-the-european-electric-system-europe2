@@ -4,15 +4,20 @@
 * voir "XXX" (notamment les coding tricks)
 * conserver FUEL_SOURCES ou bien trop compliqué pour les étudiants ?
 * voir si certains warning sont de notre fait... même si en ligne il semble que PyPSA en génère pas mal - notamment en lien avec Linopy
+* Robust end of run when infeasible... not crashing after resolution
+* doc/toy-model_tutorial.md to be completed/improved
 2bis) Cleaner italy_parameters.py
-2ter) Finaliser coquilles vides my_toy_ex_country.py et country_parameters.py
 4) Hydraulic storages... cf. CS student code
 5) Scripts avec qques exemples de base Python ? "[coding tricks]"
 6) Usage param auto fulfill interco capa missing
 7) / by efficiency in FuelSources and not * for primary cost?
 8) Remplir long_term_uc/toy_model_params/ex_italy-complem_parameters.py avec des exs complémentaires au cas italien (hydrau, batteries)
 
-If time allows...
+[Tue-...]
+1) Set dates as values in plots (and not obscure idx)
+
+
+[If time allows...]
 0) Finish and connect type checker for JSON file values -> using map(func, [val]) and all([true])
 -> OK excepting UsageParameters
 1) Set available aggreg. prod type PER COUNTRY - to facilitate exercise
