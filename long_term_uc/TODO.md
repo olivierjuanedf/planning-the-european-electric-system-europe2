@@ -10,7 +10,7 @@
 5) Scripts avec qques exemples de base Python ? "[coding tricks]"
 6) Usage param auto fulfill interco capa missing
 7) / by efficiency in FuelSources and not * for primary cost?
-
+8) Remplir long_term_uc/toy_model_params/ex_italy-complem_parameters.py avec des exs complémentaires au cas italien (hydrau, batteries)
 
 If time allows...
 0) Finish and connect type checker for JSON file values -> using map(func, [val]) and all([true])
