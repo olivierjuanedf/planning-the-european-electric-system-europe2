@@ -1,9 +1,9 @@
-# Class Title
+# Athens 2024: Planning the European electric system
 
 ## Requirements 
 
 * a Github account: If not the case, go https://github.com/ and sign up
-* enroll the classroom as a student: go ==missing url==
+* enroll the classroom as a student: go https://classroom.github.com/a/DZWCAAjk
 ![step 1n, enrolling](/.assets/img/enroll1.png)
 * Click to accept the assignment
 
