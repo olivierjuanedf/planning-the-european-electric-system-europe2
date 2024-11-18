@@ -1,0 +1,20 @@
+zone;production_type;power_capacity;power_capacity_turbine;power_capacity_pumping;power_capacity_injection;power_capacity_offtake;energy_capacity
+benelux;Batteries;0.00;0.00;0.00;15839.57;15839.57;46368.32
+benelux;Biofuel;747.15;0.00;0.00;0.00;0.00;0.00
+benelux;Demand Side Response capacity;4974.53;0.00;0.00;0.00;0.00;0.00
+benelux;Gas ;17639.60;0.00;0.00;0.00;0.00;0.00
+benelux;Hard Coal;0.00;0.00;0.00;0.00;0.00;0.00
+benelux;Hydro - Pondage;0.00;0.00;0.00;0.00;0.00;0.00
+benelux;Hydro - Pump Storage Closed Loop;0.00;1305.00;-1226.76;0.00;0.00;5800.00
+benelux;Hydro - Pump Storage Open Loop;0.00;0.00;0.00;0.00;0.00;0.00
+benelux;Hydro - Reservoir;0.00;0.00;0.00;0.00;0.00;0.00
+benelux;Hydro - Run of River;0.00;193.60;0.00;0.00;0.00;0.00
+benelux;Lignite;0.00;0.00;0.00;0.00;0.00;0.00
+benelux;Nuclear;2563.00;0.00;0.00;0.00;0.00;0.00
+benelux;Oil;140.00;0.00;0.00;0.00;0.00;0.00
+benelux;Others non-renewable;5582.75;0.00;0.00;0.00;0.00;0.00
+benelux;Others renewable;1029.62;0.00;0.00;0.00;0.00;0.00
+benelux;Solar (Photovoltaic);85543.29;0.00;0.00;0.00;0.00;0.00
+benelux;Solar (Thermal);0.00;0.00;0.00;0.00;0.00;0.00
+benelux;Wind Offshore;27602.50;0.00;0.00;0.00;0.00;0.00
+benelux;Wind Onshore;16238.05;0.00;0.00;0.00;0.00;0.00

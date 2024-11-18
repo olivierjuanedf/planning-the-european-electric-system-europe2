@@ -1,0 +1,20 @@
+zone;production_type;power_capacity;power_capacity_turbine;power_capacity_pumping;power_capacity_injection;power_capacity_offtake;energy_capacity
+germany;Batteries;0.00;0.00;0.00;11985.95;11985.95;23971.90
+germany;Biofuel;0.00;0.00;0.00;0.00;0.00;0.00
+germany;Demand Side Response capacity;5942.57;0.00;0.00;0.00;0.00;0.00
+germany;Gas ;35084.62;0.00;0.00;0.00;0.00;0.00
+germany;Hard Coal;0.00;0.00;0.00;0.00;0.00;0.00
+germany;Hydro - Pondage;0.00;0.00;0.00;0.00;0.00;0.00
+germany;Hydro - Pump Storage Closed Loop;0.00;7009.84;-7166.60;0.00;0.00;391579.78
+germany;Hydro - Pump Storage Open Loop;0.00;2144.10;-1861.00;0.00;0.00;471229.00
+germany;Hydro - Reservoir;0.00;819.00;0.00;0.00;0.00;237217.03
+germany;Hydro - Run of River;0.00;3933.90;0.00;0.00;0.00;0.00
+germany;Lignite;0.00;0.00;0.00;0.00;0.00;0.00
+germany;Nuclear;0.00;0.00;0.00;0.00;0.00;0.00
+germany;Oil;1044.83;0.00;0.00;0.00;0.00;0.00
+germany;Others non-renewable;5167.52;0.00;0.00;0.00;0.00;0.00
+germany;Others renewable;10355.84;0.00;0.00;0.00;0.00;0.00
+germany;Solar (Photovoltaic);270886.85;0.00;0.00;0.00;0.00;0.00
+germany;Solar (Thermal);0.00;0.00;0.00;0.00;0.00;0.00
+germany;Wind Offshore;42185.00;0.00;0.00;0.00;0.00;0.00
+germany;Wind Onshore;133515.93;0.00;0.00;0.00;0.00;0.00

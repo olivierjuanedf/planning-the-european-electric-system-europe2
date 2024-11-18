@@ -1,0 +1,20 @@
+zone;production_type;power_capacity;power_capacity_turbine;power_capacity_pumping;power_capacity_injection;power_capacity_offtake;energy_capacity
+scandinavia;Batteries;0.00;0.00;0.00;1841.13;1841.13;5743.38
+scandinavia;Biofuel;2648.25;0.00;0.00;0.00;0.00;0.00
+scandinavia;Demand Side Response capacity;17592.71;0.00;0.00;0.00;0.00;0.00
+scandinavia;Gas ;1891.75;0.00;0.00;0.00;0.00;0.00
+scandinavia;Hard Coal;183.60;0.00;0.00;0.00;0.00;0.00
+scandinavia;Hydro - Pondage;0.00;0.00;0.00;0.00;0.00;0.00
+scandinavia;Hydro - Pump Storage Closed Loop;0.00;0.00;0.00;0.00;0.00;0.00
+scandinavia;Hydro - Pump Storage Open Loop;0.00;709.32;-759.79;0.00;0.00;15452782.42
+scandinavia;Hydro - Reservoir;0.00;46678.27;0.00;0.00;0.00;109380886.06
+scandinavia;Hydro - Run of River;0.00;7586.41;0.00;0.00;0.00;0.00
+scandinavia;Lignite;0.00;0.00;0.00;0.00;0.00;0.00
+scandinavia;Nuclear;11277.00;0.00;0.00;0.00;0.00;0.00
+scandinavia;Oil;747.90;0.00;0.00;0.00;0.00;0.00
+scandinavia;Others non-renewable;570.50;0.00;0.00;0.00;0.00;0.00
+scandinavia;Others renewable;6857.23;0.00;0.00;0.00;0.00;0.00
+scandinavia;Solar (Photovoltaic);49644.53;0.00;0.00;0.00;0.00;0.00
+scandinavia;Solar (Thermal);0.00;0.00;0.00;0.00;0.00;0.00
+scandinavia;Wind Offshore;26643.29;0.00;0.00;0.00;0.00;0.00
+scandinavia;Wind Onshore;71700.96;0.00;0.00;0.00;0.00;0.00

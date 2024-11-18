@@ -1,0 +1,40 @@
+{
+  "selected_climatic_year": 1989,
+  "selected_countries": [
+    "france",
+    "italy",
+    "germany"
+  ],
+  "selected_target_year": 2025,
+  "selected_prod_types": {
+    "benelux": null,
+    "france": [
+      "coal",
+      "failure"
+    ],
+    "germany": [
+      "coal"
+    ],
+    "iberian-peninsula": null,
+    "italy": [
+      "coal",
+      "gas",
+      "hydro_reservoir",
+      "nuclear",
+      "oil",
+      "solar_pv",
+      "solar_thermal",
+      "wind_offshore",
+      "wind_onshore"
+    ],
+    "poland": null,
+    "scandinavia": null
+  },
+  "uc_period_start": "1900/1/1",
+  "uc_period_end": "1900/1/15",
+  "failure_power_capa": 1e10,
+  "failure_penalty": 1e5,
+  "interco_capas_updated_values": {
+    "germany2italy": 0
+  }
+}

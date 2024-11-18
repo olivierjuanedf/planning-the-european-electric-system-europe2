@@ -1,0 +1,20 @@
+zone;production_type;power_capacity;power_capacity_turbine;power_capacity_pumping;power_capacity_injection;power_capacity_offtake;energy_capacity
+poland;Batteries;0.00;0.00;0.00;0.00;0.00;0.00
+poland;Biofuel;664.84;0.00;0.00;0.00;0.00;0.00
+poland;Demand Side Response capacity;0.00;0.00;0.00;0.00;0.00;0.00
+poland;Gas ;5817.71;0.00;0.00;0.00;0.00;0.00
+poland;Hard Coal;7934.07;0.00;0.00;0.00;0.00;0.00
+poland;Hydro - Pondage;0.00;0.00;0.00;0.00;0.00;0.00
+poland;Hydro - Pump Storage Closed Loop;0.00;1333.35;-1486.00;0.00;0.00;6350.00
+poland;Hydro - Pump Storage Open Loop;0.00;216.26;-172.00;0.00;0.00;1310.00
+poland;Hydro - Reservoir;0.00;427.48;0.00;0.00;0.00;750.00
+poland;Hydro - Run of River;0.00;367.31;0.00;0.00;0.00;0.00
+poland;Lignite;5116.00;0.00;0.00;0.00;0.00;0.00
+poland;Nuclear;1110.00;0.00;0.00;0.00;0.00;0.00
+poland;Oil;0.00;0.00;0.00;0.00;0.00;0.00
+poland;Others non-renewable;4678.02;0.00;0.00;0.00;0.00;0.00
+poland;Others renewable;2183.04;0.00;0.00;0.00;0.00;0.00
+poland;Solar (Photovoltaic);22929.11;0.00;0.00;0.00;0.00;0.00
+poland;Solar (Thermal);0.00;0.00;0.00;0.00;0.00;0.00
+poland;Wind Offshore;10900.00;0.00;0.00;0.00;0.00;0.00
+poland;Wind Onshore;13767.84;0.00;0.00;0.00;0.00;0.00

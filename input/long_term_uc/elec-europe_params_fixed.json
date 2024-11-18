@@ -1,0 +1,302 @@
+{
+  "aggreg_prod_types_def": {
+    "res_capa-factors": {
+      "solar_pv": [
+        "lfsolarpv"
+      ],
+      "solar_thermal": [
+        "csp_nostorage"
+      ],
+      "wind_offshore": [
+        "wind_offshore"
+      ],
+      "wind_onshore": [
+        "wind_onshore"
+      ]
+    },
+    "generation_capas": {
+      "batteries": [
+        "batteries"
+      ],
+      "biofuel": [
+        "biofuel"
+      ],
+      "coal": [
+        "coal",
+        "hard_coal",
+        "lignite"
+      ],
+      "dsr": [
+        "demand_side_response_capacity"
+      ],
+      "gas": [
+        "gas"
+      ],
+      "hydro_pondage": [
+        "hydro_pondage"
+      ],
+      "hydro_pump_storage_closed_loop": [
+        "hydro_pump_storage_closed_loop"
+      ],
+      "hydro_pump_storage_open_loop": [
+        "hydro_pump_storage_open_loop"
+      ],
+      "hydro_reservoir": [
+        "hydro_reservoir"
+      ],
+      "hydro_run_of_river": [
+        "hydro_run_of_river"
+      ],
+      "nuclear": [
+        "nuclear"
+      ],
+      "oil": [
+        "oil"
+      ],
+      "others_fatal": [
+        "others_non-renewable",
+        "others_renewable"
+      ],
+      "solar_pv": [
+        "solar_photovoltaic"
+      ],
+      "solar_thermal": [
+        "solar_thermal"
+      ],
+      "wind_offshore": [
+        "wind_offshore"
+      ],
+      "wind_onshore": [
+        "wind_onshore"
+      ]
+    }
+  },
+  "agg_prod_types_with_cf_data": [
+    "solar_pv",
+    "solar_thermal",
+    "wind_offshore",
+    "wind_onshore"
+  ],
+  "eraa_edition": "2023.2",
+  "gps_coordinates": {
+    "benelux": [
+      4.4901,
+      51.9236
+    ],
+    "france": [
+      2.3594,
+      48.8551
+    ],
+    "germany": [
+      13.4137,
+      52.5181
+    ],
+    "iberian-peninsula": [
+      -3.4166,
+      40.4054
+    ],
+    "italy": [
+      12.4804,
+      41.8941
+    ],
+    "poland": [
+      20.9954,
+      52.2309
+    ],
+    "scandinavia": [
+      18.0461,
+      59.3306
+    ]
+  },
+  "per_zone_color": {
+    "benelux": "brown",
+    "france": "purple",
+    "germany": "gray",
+    "iberian-peninsula": "yellow",
+    "italy": "green",
+    "poland": "black",
+    "scandinavia": "blue"
+  },
+  "per_agg_prod_type_color": {
+    "batteries": "pink",
+    "biofuel": "green",
+    "coal": "brown",
+    "dsr": "red",
+    "gas": "grey",
+    "hydro_pondage": "blue",
+    "hydro_pump_storage_closed_loop": "blue",
+    "hydro_pump_storage_open_loop": "blue",
+    "hydro_reservoir": "blue",
+    "hydro_run_of_river": "blue",
+    "nuclear": "olive",
+    "oil": "black",
+    "others_fatal": "green",
+    "solar_pv": "yellow",
+    "solar_thermal": "orange",
+    "wind_offshore": "magenta",
+    "wind_onshore": "purple"
+  },
+  "pypsa_unit_params_per_agg_pt": {
+    "batteries": {
+      "carrier": "flexibility",
+      "p_min_pu": -1,
+      "p_max_pu": 1
+    },
+    "biofuel": {
+      "carrier": "biofuel",
+      "p_min_pu": 0,
+      "p_max_pu": 1,
+      "marginal_cost": 0,
+      "efficiency": 1,
+      "committable": "false"
+    },
+    "coal": {
+      "carrier": "coal",
+      "p_min_pu": 0,
+      "p_max_pu": 1,
+      "committable": "false"
+    },
+    "dsr": {
+      "max_hours": 3,
+      "cyclic_state_of_charge": "true"
+    },
+    "failure": {
+      "carrier": "failure",
+      "p_min_pu": 0,
+      "p_max_pu": 1,
+      "efficiency": 1,
+      "committable": "false"
+    },
+    "gas": {
+      "carrier": "gas",
+      "p_min_pu": 0,
+      "p_max_pu": 1,
+      "efficiency": 0.5,
+      "committable": "true"
+    },
+    "hydro_pondage": {
+      "carrier": "hydro",
+      "p_min_pu": 0,
+      "p_max_pu": 1,
+      "marginal_cost": 0.1,
+      "committable": "false"
+    },
+    "hydro_pump_storage_closed_loop": {
+      "carrier": "hydro",
+      "p_min_pu": -1.02236,
+      "p_max_pu": 1,
+      "cyclic_state_of_charge": "false",
+      "marginal_cost": 0.1,
+      "committable": "false"
+    },
+    "hydro_pump_storage_open_loop": {
+      "carrier": "hydro",
+      "p_min_pu": -0.86796,
+      "p_max_pu": 1,
+      "cyclic_state_of_charge": "false",
+      "marginal_cost": 0.1,
+      "committable": "false"
+    },
+    "hydro_reservoir": {
+      "carrier": "hydro",
+      "p_min_pu": 0,
+      "p_max_pu": 1,
+      "committable": "false"
+    },
+    "hydro_run_of_river": {
+      "carrier": "hydro",
+      "p_min_pu": 1,
+      "p_max_pu": 1,
+      "efficiency": 1,
+      "committable": "false"
+    },
+    "nuclear": {
+      "carrier": "nuclear",
+      "p_min_pu": 0.25,
+      "p_max_pu": 1,
+      "efficiency": 0.33,
+      "marginal_cost": 9,
+      "committable": "false"
+    },
+    "oil": {
+      "carrier": "oil",
+      "p_min_pu": 0,
+      "p_max_pu": 1,
+      "committable": "false"
+    },
+    "others_fatal": {
+      "carrier": "other_renew",
+      "p_min_pu": 1,
+      "p_max_pu": 1,
+      "efficiency": 0.4,
+      "committable": "false"
+    },
+    "solar_pv": {
+      "carrier": "solar",
+      "p_min_pu": 0,
+      "efficiency": 1,
+      "committable": "false"
+    },
+    "solar_thermal": {
+      "carrier": "solar",
+      "p_min_pu": 0,
+      "efficiency": 1,
+      "committable": "false"
+    },
+    "wind_offshore": {
+      "carrier": "wind",
+      "p_min_pu": 0,
+      "efficiency": 1,
+      "committable": "false"
+    },
+    "wind_onshore": {
+      "carrier": "wind",
+      "p_min_pu": 0,
+      "efficiency": 1,
+      "committable": "false"
+    }
+  },
+  "units_complem_params_per_agg_pt": {
+    "batteries": {
+      "power_capa": "from_eraa_data",
+      "init_soc_pu": "from_json_tb_modif"
+    },
+    "coal": {
+      "power_capa": "from_eraa_data"
+    },
+    "hydro_pump_storage_closed_loop": {
+      "power_capa": "from_eraa_data",
+      "energy_capa": "from_eraa_data",
+      "init_soc_pu": "from_json_tb_modif"
+    },
+    "hydro_pump_storage_open_loop": {
+      "power_capa": "from_eraa_data",
+      "init_soc_pu": "from_json_tb_modif"
+    },
+    "hydro_reservoir": {
+      "power_capa": "from_eraa_data"
+    },
+    "nuclear": {
+      "power_capa": "from_eraa_data"
+    },
+    "oil": {
+      "power_capa": "from_eraa_data"
+    },
+    "solar_pv": {
+      "p_max_pu": "from_eraa_data",
+      "capa_factors": "from_eraa_data"
+    },
+    "solar_thermal": {
+      "p_max_pu": "from_eraa_data",
+      "capa_factors": "from_eraa_data"
+    },
+    "wind_offshore": {
+      "p_max_pu": "from_eraa_data",
+      "capa_factors": "from_eraa_data"
+    },
+    "wind_onshore": {
+      "p_max_pu": "from_eraa_data",
+      "capa_factors": "from_eraa_data"
+    }
+  }
+}

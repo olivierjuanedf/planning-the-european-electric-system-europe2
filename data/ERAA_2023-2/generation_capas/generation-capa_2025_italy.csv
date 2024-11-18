@@ -1,0 +1,20 @@
+zone;production_type;power_capacity;power_capacity_turbine;power_capacity_pumping;power_capacity_injection;power_capacity_offtake;energy_capacity
+italy;Batteries;0.00;0.00;0.00;6327.40;6327.40;34978.20
+italy;Biofuel;0.00;0.00;0.00;0.00;0.00;0.00
+italy;Demand Side Response capacity;1657.26;0.00;0.00;0.00;0.00;0.00
+italy;Gas ;43221.69;0.00;0.00;0.00;0.00;0.00
+italy;Hard Coal;2362.00;0.00;0.00;0.00;0.00;0.00
+italy;Hydro - Pondage;0.00;0.00;0.00;0.00;0.00;0.00
+italy;Hydro - Pump Storage Closed Loop;0.00;4170.20;-4174.00;0.00;0.00;48000.00
+italy;Hydro - Pump Storage Open Loop;0.00;3617.86;-2222.00;0.00;0.00;289990.00
+italy;Hydro - Reservoir;0.00;8772.31;0.00;0.00;0.00;5567960.00
+italy;Hydro - Run of River;0.00;7028.60;0.00;0.00;0.00;0.00
+italy;Lignite;0.00;0.00;0.00;0.00;0.00;0.00
+italy;Nuclear;0.00;0.00;0.00;0.00;0.00;0.00
+italy;Oil;866.00;0.00;0.00;0.00;0.00;0.00
+italy;Others non-renewable;8689.03;0.00;0.00;0.00;0.00;0.00
+italy;Others renewable;4449.03;0.00;0.00;0.00;0.00;0.00
+italy;Solar (Photovoltaic);39954.39;0.00;0.00;0.00;0.00;0.00
+italy;Solar (Thermal);250.00;0.00;0.00;0.00;0.00;0.00
+italy;Wind Offshore;790.70;0.00;0.00;0.00;0.00;0.00
+italy;Wind Onshore;14512.02;0.00;0.00;0.00;0.00;0.00

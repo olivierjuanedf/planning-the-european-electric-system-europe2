@@ -1,0 +1,17 @@
+{
+  "team": "france",
+  "selected_prod_types": {
+    "france": [
+      "coal",
+      "nuclear",
+      "failure"
+    ]
+  },
+  "updated_capacities_prod_types": {
+    "france": {
+      "nuclear": 10000.0,
+      "coal": 10.0,
+      "failure": 100.0
+    }
+  }
+}

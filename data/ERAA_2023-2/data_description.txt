@@ -1,0 +1,18 @@
+About (raw) data
+* From https://www.entsoe.eu/outlooks/eraa/
+* Edition 2023-2
+
+Dates
+* all data share same year (1900) given that fictive calendar considered in this data
+* 365 days for all considered years (even for 2028... with a February 29th!)
+
+Units
+* powers in MW
+* capacity factors in %
+
+"Geographical" aggregation
+* raw data are generally provided at the scale of "market nodes" - typically with a few ones per country
+* here aggregated at the scale of (meta-)countries, with following operation per datatype:
+- demand -> sum
+- capacity factors -> mean over all market nodes in a country (to average climatic/weather effects in different
+regions - nodes - of this country)
