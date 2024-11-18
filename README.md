@@ -103,4 +103,31 @@ TO COME
 
 ## Performance Improvement for students and Academics: install gurobi
 
-TO COME.
+<details>
+
+* connect to ENPC-VISITEURS or maybe eduroam wifi
+* go and register here with you student email: https://portal.gurobi.com/iam/register
+  ![registration page 1/3](/.assets/img/gurobi_registration.png)
+* register as a student
+  ![registration page 2/3](/.assets/img/gurobi_registration2.png)
+* set a password !
+* request a 'WLS license' on this page: https://portal.gurobi.com/iam/licenses/request
+  ![license 1/3](/.assets/img/gurobi_license1.png)
+* go and download your license file it should be a gurobi.lic file: https://license.gurobi.com/manager/licenses
+  ![license 2/3](/.assets/img/gurobi_license2.png)
+* put your gurobi license at the root of your git project using drag and drop
+  ![license 3/3](/.assets/img/gurobi_license3.png)
+
+now in your python script replace
+```python
+result = network.optimize(solver_name="highs")
+```
+with
+```python
+import os
+os.environ['GRB_LICENSE_FILE'] = os.path.join(os.path.dirname(__file__), 'gurobi.lic')
+result = network.optimize(solver_name="gurobi")
+```
+
+Hopefully it should work
+</details>
