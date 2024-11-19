@@ -47,6 +47,7 @@ def get_generators(country_trigram: str, fuel_sources: Dict[str, FuelSources],
         {"name": f"Biofuel_{country_trigram}", "carrier": "Biofuel",
         "p_nom": 664.84, "p_min_pu": 0, "p_max_pu": 1, "marginal_cost": 47,
         "efficiency": 1, "committable": False},
+
         
         # QUESTION: what is this - very necessary - last fictive asset?
         {"name": f"Failure_{country_trigram}", "carrier": "Failure",
