@@ -1,0 +1,13 @@
+{
+  "team": "benelux",
+  "selected_prod_types": {
+    "benelux": [
+      "all"
+    ]
+  },
+  "updated_capacities_prod_types": {
+    "benelux": {
+      "wind_offshore": 100000.0
+    }
+  }
+}
