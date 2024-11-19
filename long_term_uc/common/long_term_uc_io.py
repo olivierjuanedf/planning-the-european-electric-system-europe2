@@ -102,19 +102,25 @@ def get_output_file_suffix(country: str, year: int, climatic_year: int, start_ho
     return f"{country}_{year}_cy{climatic_year}_{start_horizon.strftime(DATE_FORMAT_FILE)}"
 
 
-def get_prod_figure(country: str, year: int, climatic_year: int, start_horizon: datetime) -> str:
+def get_output_file_named(name: str, extension:str, output_dir:str, country: str, year: int, climatic_year: int, start_horizon: datetime) -> str:
     file_suffix = get_output_file_suffix(country=country, year=year, climatic_year=climatic_year,
                                          start_horizon=start_horizon)
-    return f"{OUTPUT_FIG_FOLDER}/prod_{file_suffix}.png"
+    return f"{output_dir}/{name}_{file_suffix}.{extension}"
 
+def get_figure_file_named(name: str, country: str, year: int, climatic_year: int, start_horizon: datetime) -> str:
+    return get_output_file_named(name, 'png', OUTPUT_FIG_FOLDER, country, year, climatic_year, start_horizon)
+
+def get_prod_figure(country: str, year: int, climatic_year: int, start_horizon: datetime) -> str:
+    return get_figure_file_named('prod', country, year, climatic_year, start_horizon)
 
 def get_price_figure(country: str, year: int, climatic_year: int, start_horizon: datetime) -> str:
-    file_suffix = get_output_file_suffix(country=country, year=year, climatic_year=climatic_year,
-                                         start_horizon=start_horizon)
-    return f"{OUTPUT_FIG_FOLDER}/prices_{file_suffix}.png"
+    return get_figure_file_named('prices', country, year, climatic_year, start_horizon)
 
+def get_csv_file_named(name:str, country: str, year: int, climatic_year: int, start_horizon: datetime) -> str:
+    return get_output_file_named(name, 'csv', OUTPUT_DATA_FOLDER, country, year, climatic_year, start_horizon)
 
 def get_opt_power_file(country: str, year: int, climatic_year: int, start_horizon: datetime) -> str:
-    file_suffix = get_output_file_suffix(country=country, year=year, climatic_year=climatic_year,
-                                         start_horizon=start_horizon)
-    return f"{OUTPUT_DATA_FOLDER}/opt_p_{file_suffix}.csv"
+    return get_csv_file_named('opt_power', country, year, climatic_year, start_horizon)
+
+def get_marginal_prices_file(country: str, year: int, climatic_year: int, start_horizon: datetime) -> str:
+    return get_csv_file_named('marginal_prices', country, year, climatic_year, start_horizon)
