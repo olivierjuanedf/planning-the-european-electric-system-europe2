@@ -113,4 +113,5 @@ CHECK_FUNCTIONS = {"str": check_str,
                    "dict_str_list_of_str": check_str_list_of_str_dict,
                    "dict_str_str": check_str_str_dict,
                    "two_level_dict_str_str_list-of-str": check_str_str_list_of_str_dict,
-                   "two_level_dict_str_str_str": check_three_level_str_dict}
+                   "two_level_dict_str_str_str": check_three_level_str_dict
+                   }

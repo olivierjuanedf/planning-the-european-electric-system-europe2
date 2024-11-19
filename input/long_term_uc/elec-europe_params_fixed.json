@@ -157,7 +157,10 @@
       "committable": "false"
     },
     "dsr": {
+      "carrier": "dsr",
       "max_hours": 3,
+      "p_min_pu": 0,
+      "p_max_pu": 1,
       "cyclic_state_of_charge": "true"
     },
     "failure": {

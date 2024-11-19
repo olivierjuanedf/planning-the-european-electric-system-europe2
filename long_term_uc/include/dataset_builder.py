@@ -9,6 +9,7 @@ import pypsa
 from long_term_uc.common.error_msgs import print_errors_list, print_out_msg
 from long_term_uc.common.long_term_uc_io import COMPLEM_DATA_SOURCES, COLUMN_NAMES
 from long_term_uc.common.fuel_sources import FuelSources
+from long_term_uc.common.uc_run_params import UCRunParams
 from long_term_uc.utils.basic_utils import lexico_compar_str
 
 
@@ -33,6 +34,8 @@ class GenerationUnitData:
     efficiency: float = None
     marginal_cost: float = None
     committable: bool = False
+    max_hours: float = None
+    cyclic_state_of_charge: bool = None
 
     def get_non_none_attr_names(self):
         return [key for key, val in self.__dict__.items() if val is not None]
@@ -56,7 +59,8 @@ def set_gen_unit_name(country: str, agg_prod_type: str) -> str:
     return f"{country_trigram}_{agg_prod_type}"
 
 
-def get_generation_units_data(pypsa_unit_params_per_agg_pt: Dict[str, dict], 
+def get_generation_units_data(uc_run_params: UCRunParams,
+                              pypsa_unit_params_per_agg_pt: Dict[str, dict], 
                               units_complem_params_per_agg_pt: Dict[str, Dict[str, str]], 
                               agg_res_cf_data: Dict[str, pd.DataFrame], 
                               agg_gen_capa_data: Dict[str, pd.DataFrame]) -> Dict[str, List[GenerationUnitData]]:
@@ -115,6 +119,10 @@ def get_generation_units_data(pypsa_unit_params_per_agg_pt: Dict[str, dict],
                 # max hours for storage-like assets (energy capa/power capa)
 
                 # marginal costs/efficiency, from FuelSources
+            elif agg_pt == 'failure':
+                current_assets_data[agg_pt]['p_nom'] = agg_gen_capa_data[country].loc[agg_gen_capa_data[country]['production_type_agg']=='failure', 'power_capacity'].iloc[0]
+                current_assets_data[agg_pt]['marginal_cost'] = uc_run_params.failure_penalty
+                current_assets_data[agg_pt]['committable'] = False
             generation_units_data[country].append(GenerationUnitData(**current_assets_data[agg_pt]))
     return generation_units_data
 
@@ -257,7 +265,8 @@ def add_interco_links(network, countries: List[str], interco_capas: Dict[Tuple[s
     
     # add to PyPSA network
     for link in links:
-        network.add("Link", **link)
+        if link['p_nom'] > 0:
+            network.add("Link", **link)
 
     return network
 

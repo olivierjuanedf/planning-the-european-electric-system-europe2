@@ -1,56 +1,190 @@
 {
-    "climatic_years": [
-      1982,
-      1989,
-      1996,
-      2003,
-      2010,
-      2016
-    ],
-    "countries": [
-      "benelux",
-      "france",
-      "germany",
-      "iberian-peninsula",
-      "italy",
-      "poland",
-      "scandinavia"
-    ],
-    "aggreg_prod_types": [
-      "batteries",
-      "biofuel",
-      "coal",
-      "dsr",
-      "failure",
-      "gas",
-      "hydro_pondage",
-      "hydro_pump_storage_closed_loop",
-      "hydro_pump_storage_open_loop",
-      "hydro_reservoir",
-      "hydro_run_of_river",
-      "nuclear",
-      "oil",
-      "others_fatal",
-      "solar_pv",
-      "solar_thermal",
-      "wind_offshore",
-      "wind_onshore"
-    ],
-    "target_years": [
-      2025,
-      2033
-    ],
-    "intercos": [
-      "benelux2france",
-      "benelux2germany",
-      "benelux2scandinavia",
-      "france2benelux",
-      "france2germany",
-      "france2italy",
-      "germany2scandinavia",
-      "iberian-peninsula2france",
-      "poland2germany",
-      "poland2scandinavia",
-      "scandinavia2germany"
-    ]
-  }
+  "climatic_years": [
+    1982,
+    1989,
+    1996,
+    2003,
+    2010,
+    2016
+  ],
+  "countries": [
+    "benelux",
+    "france",
+    "germany",
+    "iberian-peninsula",
+    "italy",
+    "poland",
+    "scandinavia"
+  ],
+  "aggreg_prod_types": {
+    "benelux": {
+      "2025": [
+        "wind_offshore",
+        "gas",
+        "others_fatal",
+        "dsr",
+        "batteries",
+        "coal",
+        "oil",
+        "wind_onshore",
+        "biofuel",
+        "nuclear"
+      ],
+      "2033": [
+        "wind_offshore",
+        "gas",
+        "others_fatal",
+        "dsr",
+        "batteries",
+        "oil",
+        "wind_onshore",
+        "biofuel",
+        "nuclear"
+      ]
+    },
+    "france": {
+      "2025": [
+        "wind_offshore",
+        "gas",
+        "others_fatal",
+        "dsr",
+        "batteries",
+        "oil",
+        "wind_onshore",
+        "nuclear"
+      ],
+      "2033": [
+        "wind_offshore",
+        "gas",
+        "others_fatal",
+        "dsr",
+        "batteries",
+        "wind_onshore",
+        "nuclear"
+      ]
+    },
+    "germany": {
+      "2025": [
+        "wind_offshore",
+        "gas",
+        "others_fatal",
+        "dsr",
+        "batteries",
+        "coal",
+        "oil",
+        "wind_onshore"
+      ],
+      "2033": [
+        "wind_offshore",
+        "gas",
+        "others_fatal",
+        "dsr",
+        "batteries",
+        "oil",
+        "wind_onshore"
+      ]
+    },
+    "iberian-peninsula": {
+      "2025": [
+        "wind_offshore",
+        "gas",
+        "others_fatal",
+        "dsr",
+        "batteries",
+        "coal",
+        "wind_onshore",
+        "nuclear"
+      ],
+      "2033": [
+        "wind_offshore",
+        "gas",
+        "others_fatal",
+        "dsr",
+        "batteries",
+        "wind_onshore",
+        "nuclear"
+      ]
+    },
+    "italy": {
+      "2025": [
+        "wind_offshore",
+        "gas",
+        "others_fatal",
+        "dsr",
+        "batteries",
+        "coal",
+        "oil",
+        "wind_onshore"
+      ],
+      "2033": [
+        "wind_offshore",
+        "gas",
+        "others_fatal",
+        "dsr",
+        "batteries",
+        "wind_onshore"
+      ]
+    },
+    "poland": {
+      "2025": [
+        "gas",
+        "others_fatal",
+        "coal",
+        "wind_onshore",
+        "biofuel"
+      ],
+      "2033": [
+        "wind_offshore",
+        "gas",
+        "others_fatal",
+        "coal",
+        "wind_onshore",
+        "biofuel",
+        "nuclear"
+      ]
+    },
+    "scandinavia": {
+      "2025": [
+        "wind_offshore",
+        "gas",
+        "others_fatal",
+        "dsr",
+        "batteries",
+        "coal",
+        "oil",
+        "wind_onshore",
+        "biofuel",
+        "nuclear"
+      ],
+      "2033": [
+        "wind_offshore",
+        "gas",
+        "others_fatal",
+        "dsr",
+        "batteries",
+        "coal",
+        "oil",
+        "wind_onshore",
+        "biofuel",
+        "nuclear"
+      ]
+    }
+  },
+  "target_years": [
+    2025,
+    2033
+  ],
+  "intercos": [
+    "benelux2france",
+    "benelux2germany",
+    "benelux2scandinavia",
+    "france2benelux",
+    "france2germany",
+    "france2italy",
+    "germany2scandinavia",
+    "iberian-peninsula2france",
+    "poland2germany",
+    "poland2scandinavia",
+    "scandinavia2germany"
+  ]
+}

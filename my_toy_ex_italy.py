@@ -43,11 +43,11 @@ AGG_PROD_TYPES_DEF = {
 country = "italy"
 # select first ERAA year available, as an example 
 # -> see values in input/long_term_uc/elec-europe_eraa-available-values.json
-year = 2025
+year = 2025  # Can be changed -> available values [2025, 2033]
 # and a given "climatic year" (to possibly test different climatic*weather conditions)
 # -> idem
 # N.B. Ask Boutheina OUESLATI on Wednesday to get an idea of the 'climatic' versus 'weather' conditions 
-climatic_year = 1989
+climatic_year = 1989  # Can be changed -> available values [1982, 1989, 1996, 2003, 2010, 2016]
 # TODO: used?
 agg_prod_types_selec = ["wind_onshore", "wind_offshore", "solar_pv"]
 
@@ -71,6 +71,12 @@ uc_run_params = UCRunParams(selected_countries=selected_countries, selected_targ
                             uc_period_start=uc_period_start,
                             uc_period_end=uc_period_end)
 
+import pandas as pd
+horizon = pd.date_range(
+    start = uc_period_start.replace(year=uc_run_params.selected_target_year),
+    end = uc_period_end.replace(year=uc_run_params.selected_target_year),
+    freq = 'h'
+)
 """
 III) Get needed data - from ERAA csv files in data\\ERAA_2023-2
 """
@@ -105,6 +111,7 @@ print("Initialize PyPSA network")
 # Here snapshots is used to defined the temporal period associated to considered UC model
 # -> for ex. as a list of indices (other formats; like data ranges can be used instead) 
 network = pypsa.Network(snapshots=demand[country].index)
+network.set_snapshots(horizon[:-1])
 # And print it to check that for now it is... empty
 print(network)
 
@@ -176,11 +183,20 @@ for load in loads:
 # IV.6.1) Print the network after having completed it
 print(network)
 # IV.6.2) And plot it. Surely better when having multiple buses (countries)!!
+import matplotlib.pyplot as plt
+from long_term_uc.common.long_term_uc_io import OUTPUT_DATA_FOLDER, get_figure_file_named, get_marginal_prices_file
+
 network.plot(
-    title="Mixed AC (blue) - DC (red) network - DC (cyan)",
+    title="Network",
     color_geomap=True,
     jitter=0.3,
 )
+plt.tight_layout()
+plt.savefig(get_figure_file_named('network', country=country, year=year, climatic_year=climatic_year, 
+                            start_horizon=uc_run_params.uc_period_start)
+                            )
+plt.close()
+
 # IV.6.3) Print out list of generators
 print(network.generators)
 
@@ -194,12 +210,10 @@ print(f"Total cost at optimum: {network.objective:.2f}")
 # -> will be saved in output folder output/long_term_uc/data
 from pathlib import Path
 import pypsa.optimization as opt
-from long_term_uc.common.long_term_uc_io import OUTPUT_DATA_FOLDER
 m = opt.create_model(network)
 m.to_file(Path(f'{OUTPUT_DATA_FOLDER}/model_{country_trigram}.lp'))
 
 # IV.8) Plot a few info/results
-import matplotlib.pyplot as plt
 print("Plot generation and prices figures")
 # IV.8.1) Plot generation units capacities
 # N.B. p_nom_opt is the optimized capacity (that can be also a variable in PyPSA but here... 
@@ -207,17 +221,47 @@ print("Plot generation and prices figures")
 network.generators.p_nom_opt.drop(f"Failure_{country_trigram}").div(1e3).plot.bar(ylabel="GW", figsize=(8, 3))
 # [Coding trick] Matplotlib can directly adapt size of figure to fit with values plotted
 plt.tight_layout()
+plt.savefig(get_figure_file_named('generators', country=country, year=year, climatic_year=climatic_year, 
+                            start_horizon=uc_run_params.uc_period_start)
+                            )
+plt.close()
 
 # IV.8.2) And "stack" of optimized production profiles -> key graph to interpret UC solution -> will be 
 # saved in file output/long_term_uc/figures/prod_italy_{year}_{period start, under format %Y-%m-%d}.png
+from long_term_uc.common.long_term_uc_io import get_prod_figure, get_price_figure, get_opt_power_file
 network.generators_t.p.div(1e3).plot.area(subplots=False, ylabel="GW")
-from long_term_uc.common.long_term_uc_io import get_prod_figure, get_price_figure
 plt.tight_layout()
-plt.savefig(get_prod_figure(country=country, year=year, start_horizon=uc_run_params.uc_period_start))
+plt.savefig(get_prod_figure(country=country, year=year, climatic_year=climatic_year, 
+                            start_horizon=uc_run_params.uc_period_start)
+                            )
+plt.close()
+
+network.generators_t.p.div(1e3)[f'Failure_{country_trigram}'].plot.line(subplots=False, ylabel="GW")
+plt.tight_layout()
+plt.savefig(get_figure_file_named('failure', country=country, year=year, climatic_year=climatic_year, 
+                            start_horizon=uc_run_params.uc_period_start)
+                            )
+plt.close()
+
 
 # IV.8.3) Finally, "marginal prices" -> QUESTION: meaning? 
 # -> saved in file output/long_term_uc/figures/prices_italy_{year}_{period start, under format %Y-%m-%d}.png
 # QUESTION: how can you interpret the very constant value plotted?
-network.buses_t.marginal_price.mean(1).plot.area(figsize=(8, 3), ylabel="Euro per MWh")
+network.buses_t.marginal_price.mean(1).plot.line(figsize=(8, 3), ylabel="Euro per MWh")
 plt.tight_layout()
-plt.savefig(get_price_figure(country=country, year=year, start_horizon=uc_run_params.uc_period_start))
+plt.savefig(get_price_figure(country=country, year=year, climatic_year=climatic_year, 
+                             start_horizon=uc_run_params.uc_period_start)
+                             )
+plt.close()
+
+# IV.9) Save optimal decision to an output file
+print("Save optimal dispatch decisions to .csv file")
+opt_p_csv_file = get_opt_power_file(country=country, year=year, climatic_year=climatic_year, 
+                                    start_horizon=uc_run_params.uc_period_start)
+network.generators_t.p.to_csv(opt_p_csv_file)
+
+# IV.10) Save marginal prices to an output file
+print("Save marginal prices decisions to .csv file")
+marginal_prices_csv_file = get_marginal_prices_file(country=country, year=year, climatic_year=climatic_year, 
+                                    start_horizon=uc_run_params.uc_period_start)
+network.buses_t.marginal_price.mean(1).to_csv(marginal_prices_csv_file)

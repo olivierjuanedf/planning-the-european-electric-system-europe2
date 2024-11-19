@@ -28,7 +28,7 @@ def apply_params_type_check(param_obj_dict: dict, types_for_check: Dict[str, str
         if check_result is False:
             check_errors.append(attr_tb_checked)
     if len(check_errors) > 0:
-        print_errors_list(error_name=f"{param_name} JSON data with erroneous types:", 
+        print_errors_list(error_name=f"{param_name} JSON data with erroneous types", 
                             errors_list=check_errors)
 
 
@@ -40,7 +40,7 @@ RAW_TYPES_FOR_CHECK = {"eraa_dataset_descr":
                         "agg_prod_types_with_cf_data": "list_of_str",
                         "available_climatic_years": "list_of_int",
                         "available_countries": "list_of_str",
-                        "available_aggreg_prod_types": "list_of_str",
+                        "available_aggreg_prod_types": "two_level_dict_str_str_list-of-str",
                         "available_intercos": "list_of_str",
                         "available_target_years": "list_of_int",
                         "eraa_edition": "str",
@@ -73,6 +73,10 @@ class UsageParameters:
         # TODO: code it
 
 
+# TODO: "failure" as global constant
+FAILURE_ASSET = "failure"
+        
+
 @dataclass
 class ERAADatasetDescr:
     # {datatype: {aggreg. prod. type: list of ERAA prod types}}
@@ -80,7 +84,7 @@ class ERAADatasetDescr:
     agg_prod_types_with_cf_data: List[str]  # list of aggreg. prod types with CF (to be read)
     available_climatic_years: List[int]
     available_countries: List[str]
-    available_aggreg_prod_types: List[str]
+    available_aggreg_prod_types: Union[Dict[str, Dict[str, List[str]]], Dict[str, Dict[int, List[str]]]]
     available_intercos: Union[List[str], List[Tuple[str, str]]]
     available_target_years: List[int]  # N.B. "target year" is a "year" in ERAA terminology
     eraa_edition: str
@@ -100,7 +104,9 @@ class ERAADatasetDescr:
                                 types_for_check=RAW_TYPES_FOR_CHECK["eraa_dataset_descr"], 
                                 param_name="ERAA description data - fixed ones -")
 
-    def process(self):
+    # TODO: get auto_add_failure_pu from global usage params
+    def process(self, auto_add_failure_pu: bool = True):
+        # convert str bool to boolean
         for agg_pt, pypsa_params in self.pypsa_unit_params_per_agg_pt.items():
             for param_name, param_val in pypsa_params.items():
                 if is_str_bool(bool_str=param_val) is True:
@@ -109,7 +115,17 @@ class ERAADatasetDescr:
             self.gps_coordinates[country] = tuple(self.gps_coordinates[country])
         # from "{zone_origin}{INTERCO_STR_SEP}{zone_dest}" format of interco names to tuples (zone_origin, zone_dest)
         self.available_intercos = set_interco_to_tuples(interco_names=self.available_intercos)
-
+        # convert str year values to int
+        new_avail_aggreg_pt_dict = {}
+        for country, all_years_dict in self.available_aggreg_prod_types.items():
+            new_avail_aggreg_pt_dict[country] = {int(elt_year): all_years_dict[elt_year] for elt_year in all_years_dict}
+            # and add failure - fictive - asset
+            if auto_add_failure_pu is True:
+                for elt_year in new_avail_aggreg_pt_dict[country]:
+                    if FAILURE_ASSET not in new_avail_aggreg_pt_dict[country][elt_year]:
+                        new_avail_aggreg_pt_dict[country][elt_year].append(FAILURE_ASSET)
+             
+        self.available_aggreg_prod_types = new_avail_aggreg_pt_dict
 
 ALL_UNITS_KEY = "all_units"
 
