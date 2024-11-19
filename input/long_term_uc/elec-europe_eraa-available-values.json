@@ -23,7 +23,6 @@
         "gas",
         "others_fatal",
         "dsr",
-        "batteries",
         "coal",
         "oil",
         "wind_onshore",
@@ -35,7 +34,6 @@
         "gas",
         "others_fatal",
         "dsr",
-        "batteries",
         "oil",
         "wind_onshore",
         "biofuel",
@@ -48,7 +46,6 @@
         "gas",
         "others_fatal",
         "dsr",
-        "batteries",
         "oil",
         "wind_onshore",
         "nuclear"
@@ -58,7 +55,6 @@
         "gas",
         "others_fatal",
         "dsr",
-        "batteries",
         "wind_onshore",
         "nuclear"
       ]
@@ -69,7 +65,6 @@
         "gas",
         "others_fatal",
         "dsr",
-        "batteries",
         "coal",
         "oil",
         "wind_onshore"
@@ -79,7 +74,6 @@
         "gas",
         "others_fatal",
         "dsr",
-        "batteries",
         "oil",
         "wind_onshore"
       ]
@@ -90,7 +84,6 @@
         "gas",
         "others_fatal",
         "dsr",
-        "batteries",
         "coal",
         "wind_onshore",
         "nuclear"
@@ -100,7 +93,6 @@
         "gas",
         "others_fatal",
         "dsr",
-        "batteries",
         "wind_onshore",
         "nuclear"
       ]
@@ -111,7 +103,6 @@
         "gas",
         "others_fatal",
         "dsr",
-        "batteries",
         "coal",
         "oil",
         "wind_onshore"
@@ -121,7 +112,6 @@
         "gas",
         "others_fatal",
         "dsr",
-        "batteries",
         "wind_onshore"
       ]
     },
@@ -149,7 +139,6 @@
         "gas",
         "others_fatal",
         "dsr",
-        "batteries",
         "coal",
         "oil",
         "wind_onshore",
@@ -161,7 +150,6 @@
         "gas",
         "others_fatal",
         "dsr",
-        "batteries",
         "coal",
         "oil",
         "wind_onshore",

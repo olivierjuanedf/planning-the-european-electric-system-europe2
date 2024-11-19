@@ -7,7 +7,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 warnings.simplefilter(action='ignore', category=UserWarning)
 import matplotlib.pyplot as plt
 
-from long_term_uc.common.long_term_uc_io import get_marginal_prices_file, get_opt_power_file, get_prod_figure, get_network_figure
+from long_term_uc.common.long_term_uc_io import get_marginal_prices_file, get_opt_power_file, get_price_figure, get_prod_figure, get_network_figure
 from long_term_uc.utils.read import read_and_check_uc_run_params
 from long_term_uc.utils.eraa_data_reader import get_countries_data
 from long_term_uc.utils.basic_utils import get_period_str
@@ -37,6 +37,10 @@ generation_units_data = \
   get_generation_units_data(uc_run_params=uc_run_params, pypsa_unit_params_per_agg_pt=eraa_data_descr.pypsa_unit_params_per_agg_pt,
                             units_complem_params_per_agg_pt=eraa_data_descr.units_complem_params_per_agg_pt, 
                             agg_res_cf_data=agg_cf_data, agg_gen_capa_data=agg_gen_capa_data)
+for country, val in generation_units_data.items():
+    for i in range(len(val)):
+        val[i].committable = False
+
 print("Check that 'minimal' PyPSA parameters for unit creation have been provided (in JSON files)/read (from ERAA data)")
 pypsa_static_params = read_and_check_pypsa_static_params()
 control_min_pypsa_params_per_gen_units(generation_units_data=generation_units_data,
@@ -72,6 +76,16 @@ save_lp_model(network, year=uc_run_params.selected_target_year,
               n_countries=len(uc_run_params.selected_countries), 
               period_start=uc_run_params.uc_period_start)
 print("THE END of European PyPSA-ERAA UC simulation... now you can hack it!")
+
+
+network.buses_t.marginal_price.plot.line(figsize=(8, 3), ylabel="Euro per MWh")
+plt.tight_layout()
+plt.savefig(get_price_figure(country='europe', year=uc_run_params.selected_target_year, climatic_year=uc_run_params.selected_climatic_year,
+                             start_horizon=uc_run_params.uc_period_start)
+                             )
+plt.close()
+
+
 
 # IV.9) Save optimal decision to an output file
 print("Save optimal dispatch decisions to .csv file")

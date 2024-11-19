@@ -122,6 +122,7 @@ def get_generation_units_data(uc_run_params: UCRunParams,
             elif agg_pt == 'failure':
                 current_assets_data[agg_pt]['p_nom'] = agg_gen_capa_data[country].loc[agg_gen_capa_data[country]['production_type_agg']=='failure', 'power_capacity'].iloc[0]
                 current_assets_data[agg_pt]['marginal_cost'] = uc_run_params.failure_penalty
+                current_assets_data[agg_pt]['committable'] = False
             generation_units_data[country].append(GenerationUnitData(**current_assets_data[agg_pt]))
     return generation_units_data
 
@@ -264,7 +265,8 @@ def add_interco_links(network, countries: List[str], interco_capas: Dict[Tuple[s
     
     # add to PyPSA network
     for link in links:
-        network.add("Link", **link)
+        if link['p_nom'] > 0:
+            network.add("Link", **link)
 
     return network
 
