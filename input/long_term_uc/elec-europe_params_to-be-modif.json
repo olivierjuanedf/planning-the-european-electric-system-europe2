@@ -12,7 +12,8 @@
       "failure"
     ],
     "germany": [
-      "coal"
+      "coal",
+      "failure"
     ],
     "iberian-peninsula": null,
     "italy": [
@@ -20,7 +21,8 @@
       "gas",
       "oil",
       "wind_offshore",
-      "wind_onshore"
+      "wind_onshore",
+      "failure"
     ],
     "poland": null,
     "scandinavia": null

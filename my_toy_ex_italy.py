@@ -257,6 +257,4 @@ network.generators_t.p.to_csv(opt_p_csv_file)
 print("Save marginal prices decisions to .csv file")
 marginal_prices_csv_file = get_marginal_prices_file(country=country, year=year, climatic_year=climatic_year, 
                                     start_horizon=uc_run_params.uc_period_start)
-a = network.buses_t.marginal_price.mean(1)
-b = network.buses_t.marginal_price
 network.buses_t.marginal_price.mean(1).to_csv(marginal_prices_csv_file)

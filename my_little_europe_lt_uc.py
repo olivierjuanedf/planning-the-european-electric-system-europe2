@@ -7,7 +7,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 warnings.simplefilter(action='ignore', category=UserWarning)
 import matplotlib.pyplot as plt
 
-from long_term_uc.common.long_term_uc_io import get_prod_figure, get_network_figure
+from long_term_uc.common.long_term_uc_io import get_marginal_prices_file, get_opt_power_file, get_prod_figure, get_network_figure
 from long_term_uc.utils.read import read_and_check_uc_run_params
 from long_term_uc.utils.eraa_data_reader import get_countries_data
 from long_term_uc.utils.basic_utils import get_period_str
@@ -55,6 +55,7 @@ network = add_loads(network=network, demand=demand)
 network = add_interco_links(network, countries=uc_run_params.selected_countries, 
                             interco_capas=interco_capas)
 print("PyPSA network main properties:", network)
+plt.close()
 network.plot(title="My little elec. Europe network", color_geomap=True, jitter=0.3)
 plt.savefig(get_network_figure())
 print("Optimize 'network' - i.e. solve associated UC problem")
@@ -64,3 +65,15 @@ save_lp_model(network, year=uc_run_params.selected_target_year,
               n_countries=len(uc_run_params.selected_countries), 
               period_start=uc_run_params.uc_period_start)
 print("THE END of European PyPSA-ERAA UC simulation... now you can hack it!")
+
+# IV.9) Save optimal decision to an output file
+print("Save optimal dispatch decisions to .csv file")
+opt_p_csv_file = get_opt_power_file(country='europe', year=uc_run_params.selected_target_year, climatic_year=uc_run_params.selected_climatic_year, 
+                                    start_horizon=uc_run_params.uc_period_start)
+network.generators_t.p.to_csv(opt_p_csv_file)
+
+# IV.10) Save marginal prices to an output file
+print("Save marginal prices decisions to .csv file")
+marginal_prices_csv_file = get_marginal_prices_file(country='europe', year=uc_run_params.selected_target_year, climatic_year=uc_run_params.selected_climatic_year, 
+                                    start_horizon=uc_run_params.uc_period_start)
+network.buses_t.marginal_price.mean(1).to_csv(marginal_prices_csv_file)

@@ -115,6 +115,8 @@ def get_generation_units_data(pypsa_unit_params_per_agg_pt: Dict[str, dict],
                 # max hours for storage-like assets (energy capa/power capa)
 
                 # marginal costs/efficiency, from FuelSources
+            elif agg_pt == 'failure':
+                current_assets_data[agg_pt]['p_nom'] = agg_gen_capa_data[country].loc[agg_gen_capa_data[country]['production_type_agg']=='failure', 'power_capacity'].iloc[0]
             generation_units_data[country].append(GenerationUnitData(**current_assets_data[agg_pt]))
     return generation_units_data
 

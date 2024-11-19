@@ -72,6 +72,10 @@
       "wind_onshore": [
         "p_min_pu",
         "p_max_pu"
+      ],
+      "failure": [
+        "p_min_pu",
+        "p_max_pu"
       ]
     }
   }

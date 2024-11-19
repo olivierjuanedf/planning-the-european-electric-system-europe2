@@ -183,6 +183,21 @@ def get_countries_data(uc_run_params: UCRunParams, agg_prod_types_with_cf_data: 
             if country in power_capacities:
                 for k, v in power_capacities[country].items():
                     current_df_gen_capa.loc[current_df_gen_capa['production_type_agg']==k, 'power_capacity'] = v
+            
+            if 'failure' in selec_agg_prod_types[country]:
+                failure_df = pd.DataFrame.from_dict({
+                    'production_type_agg': ['failure'],
+                    'power_capacity': [uc_run_params.failure_power_capa],
+                    'power_capacity_turbine': [0.0],
+                    'power_capacity_pumping': [0.0],
+                    'power_capacity_injection': [0.0],
+                    'power_capacity_offtake': [0.0]
+                })
+                current_df_gen_capa = pd.concat([current_df_gen_capa, failure_df], ignore_index=True)
+            
+            if country in power_capacities:
+                for k, v in power_capacities[country].items():
+                    current_df_gen_capa.loc[current_df_gen_capa['production_type_agg']==k, 'power_capacity'] = v
             agg_gen_capa_data[country] = current_df_gen_capa
             print('#'*100)
             print(current_df_gen_capa)

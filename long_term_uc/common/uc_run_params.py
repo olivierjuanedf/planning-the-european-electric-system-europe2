@@ -72,6 +72,9 @@ class UCRunParams:
                                                    return_corresp=True)
             self.interco_capas_updated_values = {interco_tuples[key]: val
                                                for key, val in self.interco_capas_updated_values.items()}
+        print('*'*30)
+        print(self.selected_prod_types)
+        print('*'*30)
 
     def coherence_check(self, eraa_data_descr: ERAADatasetDescr, year: int):
         errors_list = []
