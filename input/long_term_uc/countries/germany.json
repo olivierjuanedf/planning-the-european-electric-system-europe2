@@ -1,27 +1,18 @@
 {
-  "team": "germany",  
+  "team": "france",
   "selected_prod_types": {
-    "germany": [
-<<<<<<< HEAD
-      "failure"
-=======
+    "france": [
       "nuclear",
-      "failure",
-      "coal",
-      "solar_pv"           
->>>>>>> bde6b94 (hi)
+      "failure"
+    ],
+    "germany": [
+      "all"
     ]
   },
   "updated_capacities_prod_types": {
-    "germany": {
-<<<<<<< HEAD
-      "failure": 10000000.0
-=======
-      "nuclear": 0.00,
-      "failure": 0.00,
-      "coal" : 12786.24,
-      "solar_pv" : 88447.85
->>>>>>> bde6b94 (hi)
+    "france": {
+      "nuclear": 100000.0,
+      "failure": 100000.0
     }
   }
 }
