@@ -1,56 +1,176 @@
 {
-    "climatic_years": [
-      1982,
-      1989,
-      1996,
-      2003,
-      2010,
-      2016
-    ],
-    "countries": [
-      "benelux",
-      "france",
-      "germany",
-      "iberian-peninsula",
-      "italy",
-      "poland",
-      "scandinavia"
-    ],
-    "aggreg_prod_types": [
-      "batteries",
-      "biofuel",
-      "coal",
-      "dsr",
-      "failure",
-      "gas",
-      "hydro_pondage",
-      "hydro_pump_storage_closed_loop",
-      "hydro_pump_storage_open_loop",
-      "hydro_reservoir",
-      "hydro_run_of_river",
-      "nuclear",
-      "oil",
-      "others_fatal",
-      "solar_pv",
-      "solar_thermal",
-      "wind_offshore",
-      "wind_onshore"
-    ],
-    "target_years": [
-      2025,
-      2033
-    ],
-    "intercos": [
-      "benelux2france",
-      "benelux2germany",
-      "benelux2scandinavia",
-      "france2benelux",
-      "france2germany",
-      "france2italy",
-      "germany2scandinavia",
-      "iberian-peninsula2france",
-      "poland2germany",
-      "poland2scandinavia",
-      "scandinavia2germany"
-    ]
-  }
+  "climatic_years": [
+    1982,
+    1989,
+    1996,
+    2003,
+    2010,
+    2016
+  ],
+  "countries": [
+    "benelux",
+    "france",
+    "germany",
+    "iberian-peninsula",
+    "italy",
+    "poland",
+    "scandinavia"
+  ],
+  "aggreg_prod_types": {
+    "enelux": {
+      "2025": [
+        "biofuel",
+        "wind_offshore",
+        "wind_onshore",
+        "batteries",
+        "oil",
+        "dsr",
+        "nuclear",
+        "others_fatal",
+        "coal"
+      ],
+      "2033": [
+        "biofuel",
+        "wind_offshore",
+        "wind_onshore",
+        "batteries",
+        "oil",
+        "dsr",
+        "nuclear",
+        "others_fatal"
+      ]
+    },
+    "france": {
+      "2025": [
+        "wind_offshore",
+        "wind_onshore",
+        "batteries",
+        "oil",
+        "dsr",
+        "nuclear",
+        "others_fatal"
+      ],
+      "2033": [
+        "wind_onshore",
+        "batteries",
+        "wind_offshore",
+        "dsr",
+        "nuclear",
+        "others_fatal"
+      ]
+    },
+    "germany": {
+      "2025": [
+        "wind_offshore",
+        "wind_onshore",
+        "batteries",
+        "oil",
+        "dsr",
+        "others_fatal",
+        "coal"
+      ],
+      "2033": [
+        "wind_offshore",
+        "wind_onshore",
+        "batteries",
+        "oil",
+        "dsr",
+        "others_fatal"
+      ]
+    },
+    "iberian-peninsula": {
+      "2025": [
+        "wind_onshore",
+        "batteries",
+        "wind_offshore",
+        "dsr",
+        "nuclear",
+        "others_fatal",
+        "coal"
+      ],
+      "2033": [
+        "wind_onshore",
+        "batteries",
+        "wind_offshore",
+        "dsr",
+        "nuclear",
+        "others_fatal"
+      ]
+    },
+    "italy": {
+      "2025": [
+        "wind_offshore",
+        "wind_onshore",
+        "batteries",
+        "oil",
+        "dsr",
+        "others_fatal",
+        "coal"
+      ],
+      "2033": [
+        "wind_onshore",
+        "batteries",
+        "wind_offshore",
+        "dsr",
+        "others_fatal"
+      ]
+    },
+    "poland": {
+      "2025": [
+        "biofuel",
+        "wind_onshore",
+        "others_fatal",
+        "coal"
+      ],
+      "2033": [
+        "biofuel",
+        "wind_onshore",
+        "wind_offshore",
+        "nuclear",
+        "others_fatal",
+        "coal"
+      ]
+    },
+    "scandinavia": {
+      "2025": [
+        "biofuel",
+        "wind_offshore",
+        "wind_onshore",
+        "batteries",
+        "il",
+        "dsr",
+        "nuclear",
+        "others_fatal",
+        "coal"
+      ],
+      "2033": [
+        "biofuel",
+        "wind_offshore",
+        "wind_onshore",
+        "batteries",
+        "oil",
+        "dsr",
+        "nuclear",
+        "others_fatal",
+        "coal"
+      ]
+    }
+  },
+  "target_years": [
+    2025,
+    2033
+  ],
+  "intercos": [
+    "benelux2france",
+    "benelux2germany",
+    "benelux2scandinavia",
+    "france2benelux",
+    "france2germany",
+    "france2italy",
+    "germany2scandinavia",
+    "iberian-peninsula2france",
+    "poland2germany",
+    "poland2scandinavia",
+    "scandinavia2germany"
+  ]
+}
