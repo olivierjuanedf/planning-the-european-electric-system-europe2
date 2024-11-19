@@ -56,3 +56,5 @@ The ones in folder *input\long_term_uc*; **file by file description**:
     - "selected_agg_prod_types": **per country selection of the (generation unit) aggregate production types** to be part of your model. N.B. (i) Using aggregate production types, i.e. the ones of field "available_aggreg_prod_types" in file *elec-europe_params_fixed.json* (a two-level dictionary, providing per country and year available fields). (ii) Setting a value to "["all"]" will use all aggregate production types corresponding to ERAA data for current run
     - "uc_period_start": **date from which UC optimization period starts; under format "1900/%M/%d"**. Ex.: "1900/1/1" to start from beginning of the year. N.B. "1900" to clearly indicate that a "fictive calendar" (modelling one) be used in ERAA data, with 364 days (to get 52 full weeks... an important granularity for some unit optim., as discussed in class)
     - (optional) "uc_period_end": idem, **end of period; same format**. Default value: period of 9 days starting from "uc_period_start". 
+
+- *input/long_term_uc/countries/{country}.json* XXX
