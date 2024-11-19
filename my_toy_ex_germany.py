@@ -1,11 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-First very simple toy Unit Commitment model of... YOUR COUNTRY zone - alone -> with PyPSA and ERAA data
--> 
-(i) copy/paste/rename this file according to your country name
-(ii) copy/paste pieces of code from my_toy_ex_italy.py to this created file
-(iii) Also, set the parameters of your country electricity generators in file {your country}_parameters.py,
-following/adapting model of long_term_uc/toy_model_params/italy_parameters.py
+First very simple toy Unit Commitment model of Germany - alone -> with PyPSA and ERAA data
 """
 import warnings
 #deactivate some annoying and useless warnings in pypsa/pandas
@@ -103,7 +98,7 @@ wind_off_shore = {
 }
 
 """
-IV) Build PyPSA model - with unique country (Italy here)
+IV) Build PyPSA model - with unique country (Germany here)
 """
 # IV.1) Initialize PyPSA Network (basis of all your simulations this week!). 
 import pypsa
@@ -115,15 +110,15 @@ network = pypsa.Network(snapshots=demand[country].index)
 print(network)
 
 #################################################
-# KEY POINT: main parameters needed for Italy description in PyPSA are set in script
-# long_term_uc.toy_model_params.italy_parameters.py
+# KEY POINT: main parameters needed for Germany description in PyPSA are set in script
+# long_term_uc.toy_model_params.germany_parameters.py
 # To get the meaning and format of main PyPSA objects/attributes look 
 # at file doc/toy-model_tutorial.md
 #################################################
 
 # IV.2) Add bus for considered country
-# N.B. Italy coordinates set randomly! (not useful in the calculation that will be done this week)
-from long_term_uc.toy_model_params.italy_parameters import gps_coords
+# N.B. germany coordinates set randomly! (not useful in the calculation that will be done this week)
+from long_term_uc.toy_model_params.germany_parameters import gps_coords
 coordinates = {"germany": gps_coords}
 # IV.2.1) For brevity, set country trigram as the "id" of this zone in following model definition (and observed outputs)
 from long_term_uc.include.dataset_builder import set_country_trigram
@@ -154,6 +149,7 @@ generators = get_generators(country_trigram=country_trigram, fuel_sources=FUEL_S
 # IV.4.2) Loop over previous list of dictionaries to add each of the generators to PyPSA network
 # [Coding trick] ** used to "unpack" the dictionary as named parameters
 for generator in generators:
+    
     network.add("Generator", bus=country_trigram, **generator, )
 # [Multiple-count. ext., start] Idem but adding the different generators to the bus (country) they are connected to
 # -> a correspondence (for ex. with a dictionary) between bus names and list of associated 
