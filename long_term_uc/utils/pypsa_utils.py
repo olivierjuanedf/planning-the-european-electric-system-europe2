@@ -1,6 +1,16 @@
 from pypsa import Network
 import numpy as np
 from typing import Dict
+from dataclasses import dataclass
+
+
+@dataclass
+class OptimResolStatus:
+    optimal: str = "optimal"
+    infeasible: str = "infeasible"
+    
+
+OPTIM_RESOL_STATUS = OptimResolStatus()
 
 
 def get_generators_opt_p(network: Network) -> Dict[str, np.array]:
@@ -10,4 +20,7 @@ def get_generators_opt_p(network: Network) -> Dict[str, np.array]:
 
 def generators_opt_p_to_csv():
     return None
-    
+
+
+def get_network_obj_value(network: Network) -> float:
+    return network.objective

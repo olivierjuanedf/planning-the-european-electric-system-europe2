@@ -77,24 +77,30 @@ save_lp_model(network, year=uc_run_params.selected_target_year,
               period_start=uc_run_params.uc_period_start)
 print("THE END of European PyPSA-ERAA UC simulation... now you can hack it!")
 
+from long_term_uc.utils.pypsa_utils import OPTIM_RESOL_STATUS, get_network_obj_value
+pypsa_opt_resol_status = OPTIM_RESOL_STATUS.optimal
+if result[1] == pypsa_opt_resol_status:
+  objective_value = get_network_obj_value(network=network)
+  print(f"Optimisation resolution status is {pypsa_opt_resol_status} with objective value (cost) = {objective_value:.2f} -> output data (resp. figures) can be generated")
 
-network.buses_t.marginal_price.plot.line(figsize=(8, 3), ylabel="Euro per MWh")
-plt.tight_layout()
-plt.savefig(get_price_figure(country='europe', year=uc_run_params.selected_target_year, climatic_year=uc_run_params.selected_climatic_year,
+  network.buses_t.marginal_price.plot.line(figsize=(8, 3), ylabel="Euro per MWh")
+  plt.tight_layout()
+  plt.savefig(get_price_figure(country='europe', year=uc_run_params.selected_target_year, climatic_year=uc_run_params.selected_climatic_year,
                              start_horizon=uc_run_params.uc_period_start)
                              )
-plt.close()
+  plt.close()
 
+  # IV.9) Save optimal decision to an output file
+  print("Save optimal dispatch decisions to .csv file")
+  opt_p_csv_file = get_opt_power_file(country='europe', year=uc_run_params.selected_target_year, climatic_year=uc_run_params.selected_climatic_year,
+                                      start_horizon=uc_run_params.uc_period_start)
+  network.generators_t.p.to_csv(opt_p_csv_file)
 
-
-# IV.9) Save optimal decision to an output file
-print("Save optimal dispatch decisions to .csv file")
-opt_p_csv_file = get_opt_power_file(country='europe', year=uc_run_params.selected_target_year, climatic_year=uc_run_params.selected_climatic_year, 
-                                    start_horizon=uc_run_params.uc_period_start)
-network.generators_t.p.to_csv(opt_p_csv_file)
-
-# IV.10) Save marginal prices to an output file
-print("Save marginal prices decisions to .csv file")
-marginal_prices_csv_file = get_marginal_prices_file(country='europe', year=uc_run_params.selected_target_year, climatic_year=uc_run_params.selected_climatic_year, 
-                                    start_horizon=uc_run_params.uc_period_start)
-network.buses_t.marginal_price.to_csv(marginal_prices_csv_file)
+  # IV.10) Save marginal prices to an output file
+  print("Save marginal prices decisions to .csv file")
+  marginal_prices_csv_file = get_marginal_prices_file(country='europe', year=uc_run_params.selected_target_year, climatic_year=uc_run_params.selected_climatic_year,
+                                                      start_horizon=uc_run_params.uc_period_start)
+  network.buses_t.marginal_price.to_csv(marginal_prices_csv_file)
+else:
+   print(f"Optimisation resolution status is not {pypsa_opt_resol_status} -> output data (resp. figures) cannot be saved (resp. plotted)")
+   
