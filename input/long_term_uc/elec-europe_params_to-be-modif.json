@@ -11,6 +11,7 @@
   ],
   "selected_target_year": 2025,
   "selected_prod_types": {
+<<<<<<< HEAD
     "benelux": ["all"],
     "france": ["all"],
     "germany": ["all"],
@@ -18,6 +19,33 @@
     "italy": ["all"],
     "poland": ["all"],
     "scandinavia": ["all"]
+=======
+    "benelux": null,
+    "france": [
+      "coal",
+      "failure"
+    ],
+    "germany": [
+      "coal", 
+      "nuclear",
+      "solar_pv",
+      "wind_onshore"
+    ],
+    "iberian-peninsula": null,
+    "italy": [
+      "coal",
+      "gas",
+      "hydro_reservoir",
+      "nuclear",
+      "oil",
+      "solar_pv",
+      "solar_thermal",
+      "wind_offshore",
+      "wind_onshore"
+    ],
+    "poland": null,
+    "scandinavia": null
+>>>>>>> bde6b94 (hi)
   },
   "uc_period_start": "1900/1/1",
   "uc_period_end": "1900/1/15",
