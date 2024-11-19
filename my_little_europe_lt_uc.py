@@ -34,7 +34,7 @@ demand, agg_cf_data, agg_gen_capa_data, interco_capas = \
 
 print("Get generation units data, from both ERAA data - read just before - and JSON parameter file")
 generation_units_data = \
-  get_generation_units_data(pypsa_unit_params_per_agg_pt=eraa_data_descr.pypsa_unit_params_per_agg_pt,
+  get_generation_units_data(uc_run_params=uc_run_params, pypsa_unit_params_per_agg_pt=eraa_data_descr.pypsa_unit_params_per_agg_pt,
                             units_complem_params_per_agg_pt=eraa_data_descr.units_complem_params_per_agg_pt, 
                             agg_res_cf_data=agg_cf_data, agg_gen_capa_data=agg_gen_capa_data)
 print("Check that 'minimal' PyPSA parameters for unit creation have been provided (in JSON files)/read (from ERAA data)")
@@ -44,6 +44,13 @@ control_min_pypsa_params_per_gen_units(generation_units_data=generation_units_da
 
 # create PyPSA network
 network = init_pypsa_network(df_demand_first_country=demand[uc_run_params.selected_countries[0]])
+import pandas as pd
+horizon = pd.date_range(
+    start = uc_run_params.uc_period_start.replace(year=uc_run_params.selected_target_year),
+    end = uc_run_params.uc_period_end.replace(year=uc_run_params.selected_target_year),
+    freq = 'h'
+)
+network.set_snapshots(horizon[:-1])
 # add GPS coordinates
 selec_countries_gps_coords = \
   {country: gps_coords for country, gps_coords in eraa_data_descr.gps_coordinates.items() 
@@ -76,4 +83,4 @@ network.generators_t.p.to_csv(opt_p_csv_file)
 print("Save marginal prices decisions to .csv file")
 marginal_prices_csv_file = get_marginal_prices_file(country='europe', year=uc_run_params.selected_target_year, climatic_year=uc_run_params.selected_climatic_year, 
                                     start_horizon=uc_run_params.uc_period_start)
-network.buses_t.marginal_price.mean(1).to_csv(marginal_prices_csv_file)
+network.buses_t.marginal_price.to_csv(marginal_prices_csv_file)

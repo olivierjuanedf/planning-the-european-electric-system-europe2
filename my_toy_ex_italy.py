@@ -71,6 +71,12 @@ uc_run_params = UCRunParams(selected_countries=selected_countries, selected_targ
                             uc_period_start=uc_period_start,
                             uc_period_end=uc_period_end)
 
+import pandas as pd
+horizon = pd.date_range(
+    start = uc_period_start.replace(year=uc_run_params.selected_target_year),
+    end = uc_period_end.replace(year=uc_run_params.selected_target_year),
+    freq = 'h'
+)
 """
 III) Get needed data - from ERAA csv files in data\\ERAA_2023-2
 """
@@ -105,6 +111,7 @@ print("Initialize PyPSA network")
 # Here snapshots is used to defined the temporal period associated to considered UC model
 # -> for ex. as a list of indices (other formats; like data ranges can be used instead) 
 network = pypsa.Network(snapshots=demand[country].index)
+network.set_snapshots(horizon[:-1])
 # And print it to check that for now it is... empty
 print(network)
 

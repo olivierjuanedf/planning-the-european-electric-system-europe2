@@ -103,6 +103,10 @@ class UCRunParams:
         if isinstance(self.selected_climatic_year, int) \
             and self.selected_climatic_year not in eraa_data_descr.available_climatic_years:
             errors_list.append(f"Unknown climatic year {self.selected_climatic_year}")
+
+        for elt_country, current_agg_pt in self.selected_prod_types.items():
+            if current_agg_pt == ['all']:
+                self.selected_prod_types[elt_country] = eraa_data_descr.available_aggreg_prod_types[elt_country][year]
         
         # check that countries in aggreg. prod. types are not repeated, and known
         agg_pt_countries = list(self.selected_prod_types)

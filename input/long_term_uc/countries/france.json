@@ -4,6 +4,9 @@
     "france": [
       "nuclear",
       "failure"
+    ],
+    "germany": [
+      "all"
     ]
   },
   "updated_capacities_prod_types": {
