@@ -221,13 +221,21 @@ plt.close()
 
 # IV.8.2) And "stack" of optimized production profiles -> key graph to interpret UC solution -> will be 
 # saved in file output/long_term_uc/figures/prod_italy_{year}_{period start, under format %Y-%m-%d}.png
-network.generators_t.p.div(1e3).plot.area(subplots=False, ylabel="GW")
 from long_term_uc.common.long_term_uc_io import get_prod_figure, get_price_figure, get_opt_power_file
+network.generators_t.p.div(1e3).plot.area(subplots=False, ylabel="GW")
 plt.tight_layout()
 plt.savefig(get_prod_figure(country=country, year=year, climatic_year=climatic_year, 
                             start_horizon=uc_run_params.uc_period_start)
                             )
 plt.close()
+
+network.generators_t.p.div(1e3)[f'Failure_{country_trigram}'].plot.line(subplots=False, ylabel="GW")
+plt.tight_layout()
+plt.savefig(get_figure_file_named('failure', country=country, year=year, climatic_year=climatic_year, 
+                            start_horizon=uc_run_params.uc_period_start)
+                            )
+plt.close()
+
 
 # IV.8.3) Finally, "marginal prices" -> QUESTION: meaning? 
 # -> saved in file output/long_term_uc/figures/prices_italy_{year}_{period start, under format %Y-%m-%d}.png
