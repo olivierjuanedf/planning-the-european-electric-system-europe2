@@ -2,12 +2,15 @@
   "team": "poland",
   "selected_prod_types": {
     "poland": [
-      "failure"
+      "all"
     ]
   },
   "updated_capacities_prod_types": {
     "poland": {
-      "failure": 10000000.0
+      "coal": 100000.0
+    },
+    "france": {
+      "nuclear": 100000.0
     }
   }
 }
