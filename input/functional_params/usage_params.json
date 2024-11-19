@@ -3,11 +3,7 @@
     "allow_overwriting_eraa_interco_capa_vals": "true",
     "allow_manually_adding_demand": "false",
     "allow_manually_adding_generators": "false",
-<<<<<<< HEAD
-    "mode": "europe",
-=======
     "apply_cf_techno_breakthrough": "false",
     "mode": "solo",
->>>>>>> 9d2fe6f (Add potential techno CF breakthrough as a usage param)
     "team": "france"
 }
