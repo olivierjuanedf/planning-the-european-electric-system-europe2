@@ -13,6 +13,7 @@ USAGE_PARAMS_SHORT_NAMES = {
     "allow_overwriting_eraa_interco_capa_vals": "overwriting_eraa_interco_capa_vals",
     "allow_manually_adding_demand": "manually_adding_demand",
     "allow_manually_adding_generators": "manually_adding_generators",
+    "apply_cf_techno_breakthrough": "apply_cf_techno_breakthrough",
     "mode": "mode",
     "team": "team"
 }
@@ -60,6 +61,7 @@ RAW_TYPES_FOR_CHECK = {"eraa_dataset_descr":
 @dataclass
 class UsageParameters:
     adding_interco_capas: bool = False
+    apply_cf_techno_breakthrough: bool = False
     overwriting_eraa_interco_capa_vals: bool = False 
     manually_adding_demand: bool = False
     manually_adding_generators: bool = False
