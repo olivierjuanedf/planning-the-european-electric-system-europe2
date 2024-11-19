@@ -254,12 +254,11 @@ if mean_prices.empty:
 else:
     mean_prices.plot(figsize=(8, 3), ylabel="Euro per MWh", title="Mean Marginal Prices")
     plt.tight_layout()
-    plt.show()
 
-# Check Save Path
-save_path = get_price_figure(country=country, year=year, start_horizon=uc_run_params.uc_period_start)
-print(f"Save Path: {save_path}")
+    # Save Figure before showing
+    save_path = get_price_figure(country=country, year=year, start_horizon=uc_run_params.uc_period_start)
+    print(f"Save Path: {save_path}")
+    plt.savefig(save_path)  # Save before showing the plot
 
-# Save Figure
-plt.tight_layout()
-plt.savefig(save_path)
+    plt.show()  # Show the plot
+
