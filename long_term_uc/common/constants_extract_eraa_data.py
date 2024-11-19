@@ -28,7 +28,7 @@ def apply_params_type_check(param_obj_dict: dict, types_for_check: Dict[str, str
         if check_result is False:
             check_errors.append(attr_tb_checked)
     if len(check_errors) > 0:
-        print_errors_list(error_name=f"{param_name} JSON data with erroneous types:", 
+        print_errors_list(error_name=f"{param_name} JSON data with erroneous types", 
                             errors_list=check_errors)
 
 
@@ -40,7 +40,7 @@ RAW_TYPES_FOR_CHECK = {"eraa_dataset_descr":
                         "agg_prod_types_with_cf_data": "list_of_str",
                         "available_climatic_years": "list_of_int",
                         "available_countries": "list_of_str",
-                        "available_aggreg_prod_types": "list_of_str",
+                        "available_aggreg_prod_types": "two_level_dict_str_str_list-of-str",
                         "available_intercos": "list_of_str",
                         "available_target_years": "list_of_int",
                         "eraa_edition": "str",
