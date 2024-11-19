@@ -98,3 +98,6 @@ print("Save marginal prices decisions to .csv file")
 marginal_prices_csv_file = get_marginal_prices_file(country='europe', year=uc_run_params.selected_target_year, climatic_year=uc_run_params.selected_climatic_year, 
                                     start_horizon=uc_run_params.uc_period_start)
 network.buses_t.marginal_price.to_csv(marginal_prices_csv_file)
+
+
+#hello
