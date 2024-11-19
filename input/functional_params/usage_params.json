@@ -4,6 +4,8 @@
     "allow_manually_adding_demand": "false",
     "allow_manually_adding_generators": "false",
     "apply_cf_techno_breakthrough": "false",
+    "res_cf_stress_test_folder": null,
+    "res_cf_stress_test_cy": null,
     "mode": "solo",
     "team": "france"
 }

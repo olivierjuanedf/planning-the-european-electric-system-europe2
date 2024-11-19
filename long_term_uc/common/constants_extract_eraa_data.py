@@ -14,6 +14,8 @@ USAGE_PARAMS_SHORT_NAMES = {
     "allow_manually_adding_demand": "manually_adding_demand",
     "allow_manually_adding_generators": "manually_adding_generators",
     "apply_cf_techno_breakthrough": "apply_cf_techno_breakthrough",
+    "res_cf_stress_test_folder": "res_cf_stress_test_folder",
+    "res_cf_stress_test_cy": "res_cf_stress_test_cy", 
     "mode": "mode",
     "team": "team"
 }
@@ -61,12 +63,15 @@ RAW_TYPES_FOR_CHECK = {"eraa_dataset_descr":
 @dataclass
 class UsageParameters:
     adding_interco_capas: bool = False
-    apply_cf_techno_breakthrough: bool = False
     overwriting_eraa_interco_capa_vals: bool = False 
     manually_adding_demand: bool = False
     manually_adding_generators: bool = False
     mode: Mode = "solo"
     team: Optional[str] = None
+    # parameters for climate-based "sensitivity" tests
+    apply_cf_techno_breakthrough: bool = False
+    res_cf_stress_test_folder: str = None
+    res_cf_stress_test_cy: int = None
 
     def check_types(self):
         """
