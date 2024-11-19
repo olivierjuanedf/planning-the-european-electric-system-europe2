@@ -93,7 +93,8 @@ def read_and_check_uc_run_params():
 
     uc_run_params = UCRunParams(**json_params_tb_modif, **countries_data)
     uc_run_params.process(available_countries=eraa_data_descr.available_countries)
-    uc_run_params.coherence_check(eraa_data_descr=eraa_data_descr)
+    uc_run_params.coherence_check(eraa_data_descr=eraa_data_descr, 
+                                  year=uc_run_params.selected_target_year)
 
     return usage_params, eraa_data_descr, uc_run_params
 

@@ -73,7 +73,7 @@ class UCRunParams:
             self.interco_capas_updated_values = {interco_tuples[key]: val
                                                for key, val in self.interco_capas_updated_values.items()}
 
-    def coherence_check(self, eraa_data_descr: ERAADatasetDescr):
+    def coherence_check(self, eraa_data_descr: ERAADatasetDescr, year: int):
         errors_list = []
         # check that there is no repetition of countries
         countries_set = set(self.selected_countries)
@@ -121,12 +121,13 @@ class UCRunParams:
         # check that aggreg. prod types are not repeated, and known
         msg_suffix = "in values of dict. of aggreg. prod. types selection, for country"
         for elt_country, current_agg_pt in self.selected_prod_types.items():
+            current_avail_aggreg_pt_set = set(eraa_data_descr.available_aggreg_prod_types[elt_country][year])
             current_agg_pt_set = set(current_agg_pt)
             if len(current_agg_pt_set) < len(current_agg_pt):
                 errors_list.append(f"Repetition of aggreg. prod. types {msg_suffix} {elt_country}")
-            unknown_agg_prod_types = list(current_agg_pt_set - set(eraa_data_descr.available_aggreg_prod_types))
+            unknown_agg_prod_types = list(current_agg_pt_set - current_avail_aggreg_pt_set)
             if len(unknown_agg_prod_types) > 0:
-                errors_list.append(f"Unknown aggreg. prod. types {msg_suffix} {elt_country}: {unknown_agg_prod_types}")
+                errors_list.append(f"Unknown/not available aggreg. prod. types {msg_suffix} {elt_country}: {unknown_agg_prod_types}")
 
         # check that both dates are in allowed period
         allowed_period_msg = f"[{MIN_DATE_IN_DATA.strftime(DATE_FORMAT)}, {MAX_DATE_IN_DATA.strftime(DATE_FORMAT)}]"

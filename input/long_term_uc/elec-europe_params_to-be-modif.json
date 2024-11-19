@@ -9,7 +9,6 @@
   "selected_prod_types": {
     "benelux": null,
     "france": [
-      "coal",
       "failure"
     ],
     "germany": [
@@ -19,11 +18,7 @@
     "italy": [
       "coal",
       "gas",
-      "hydro_reservoir",
-      "nuclear",
       "oil",
-      "solar_pv",
-      "solar_thermal",
       "wind_offshore",
       "wind_onshore"
     ],
