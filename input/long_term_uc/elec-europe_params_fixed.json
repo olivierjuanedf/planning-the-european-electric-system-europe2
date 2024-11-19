@@ -140,8 +140,7 @@
     "batteries": {
       "carrier": "flexibility",
       "p_min_pu": -1,
-      "p_max_pu": 1,
-      "committable": "false"
+      "p_max_pu": 1
     },
     "biofuel": {
       "carrier": "biofuel",
@@ -162,8 +161,7 @@
       "max_hours": 3,
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "cyclic_state_of_charge": "true",
-      "committable": "false"
+      "cyclic_state_of_charge": "true"
     },
     "failure": {
       "carrier": "failure",
@@ -177,7 +175,7 @@
       "p_min_pu": 0,
       "p_max_pu": 1,
       "efficiency": 0.5,
-      "committable": "false"
+      "committable": "true"
     },
     "hydro_pondage": {
       "carrier": "hydro",
