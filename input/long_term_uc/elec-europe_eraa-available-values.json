@@ -17,142 +17,156 @@
     "scandinavia"
   ],
   "aggreg_prod_types": {
-    "enelux": {
+    "benelux": {
       "2025": [
-        "biofuel",
         "wind_offshore",
-        "wind_onshore",
-        "batteries",
-        "oil",
-        "dsr",
-        "nuclear",
+        "gas",
         "others_fatal",
-        "coal"
+        "dsr",
+        "batteries",
+        "coal",
+        "oil",
+        "wind_onshore",
+        "biofuel",
+        "nuclear"
       ],
       "2033": [
-        "biofuel",
         "wind_offshore",
-        "wind_onshore",
+        "gas",
+        "others_fatal",
+        "dsr",
         "batteries",
         "oil",
-        "dsr",
-        "nuclear",
-        "others_fatal"
+        "wind_onshore",
+        "biofuel",
+        "nuclear"
       ]
     },
     "france": {
       "2025": [
         "wind_offshore",
-        "wind_onshore",
+        "gas",
+        "others_fatal",
+        "dsr",
         "batteries",
         "oil",
-        "dsr",
-        "nuclear",
-        "others_fatal"
+        "wind_onshore",
+        "nuclear"
       ],
       "2033": [
-        "wind_onshore",
-        "batteries",
         "wind_offshore",
+        "gas",
+        "others_fatal",
         "dsr",
-        "nuclear",
-        "others_fatal"
+        "batteries",
+        "wind_onshore",
+        "nuclear"
       ]
     },
     "germany": {
       "2025": [
         "wind_offshore",
-        "wind_onshore",
-        "batteries",
-        "oil",
-        "dsr",
+        "gas",
         "others_fatal",
-        "coal"
+        "dsr",
+        "batteries",
+        "coal",
+        "oil",
+        "wind_onshore"
       ],
       "2033": [
         "wind_offshore",
-        "wind_onshore",
+        "gas",
+        "others_fatal",
+        "dsr",
         "batteries",
         "oil",
-        "dsr",
-        "others_fatal"
+        "wind_onshore"
       ]
     },
     "iberian-peninsula": {
       "2025": [
-        "wind_onshore",
-        "batteries",
         "wind_offshore",
-        "dsr",
-        "nuclear",
+        "gas",
         "others_fatal",
-        "coal"
+        "dsr",
+        "batteries",
+        "coal",
+        "wind_onshore",
+        "nuclear"
       ],
       "2033": [
-        "wind_onshore",
-        "batteries",
         "wind_offshore",
+        "gas",
+        "others_fatal",
         "dsr",
-        "nuclear",
-        "others_fatal"
+        "batteries",
+        "wind_onshore",
+        "nuclear"
       ]
     },
     "italy": {
       "2025": [
         "wind_offshore",
-        "wind_onshore",
-        "batteries",
-        "oil",
-        "dsr",
+        "gas",
         "others_fatal",
-        "coal"
+        "dsr",
+        "batteries",
+        "coal",
+        "oil",
+        "wind_onshore"
       ],
       "2033": [
-        "wind_onshore",
-        "batteries",
         "wind_offshore",
+        "gas",
+        "others_fatal",
         "dsr",
-        "others_fatal"
+        "batteries",
+        "wind_onshore"
       ]
     },
     "poland": {
       "2025": [
-        "biofuel",
-        "wind_onshore",
+        "gas",
         "others_fatal",
-        "coal"
+        "coal",
+        "wind_onshore",
+        "biofuel"
       ],
       "2033": [
-        "biofuel",
-        "wind_onshore",
         "wind_offshore",
-        "nuclear",
+        "gas",
         "others_fatal",
-        "coal"
+        "coal",
+        "wind_onshore",
+        "biofuel",
+        "nuclear"
       ]
     },
     "scandinavia": {
       "2025": [
-        "biofuel",
         "wind_offshore",
-        "wind_onshore",
-        "batteries",
-        "il",
-        "dsr",
-        "nuclear",
+        "gas",
         "others_fatal",
-        "coal"
+        "dsr",
+        "batteries",
+        "coal",
+        "oil",
+        "wind_onshore",
+        "biofuel",
+        "nuclear"
       ],
       "2033": [
-        "biofuel",
         "wind_offshore",
-        "wind_onshore",
-        "batteries",
-        "oil",
-        "dsr",
-        "nuclear",
+        "gas",
         "others_fatal",
-        "coal"
+        "dsr",
+        "batteries",
+        "coal",
+        "oil",
+        "wind_onshore",
+        "biofuel",
+        "nuclear"
       ]
     }
   },
