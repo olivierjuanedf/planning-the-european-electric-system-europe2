@@ -63,7 +63,7 @@ The ones in folder *input\long_term_uc*; **file by file description**:
     - "gps_coordinates": the ones of the capitals excepting meta-countries with coordinates of Rotterdam for "benelux", Madrid for "iberian-peninsula", and Stockholm for "scandinavia". N.B. Only for plotting - very schematic - representation of the "network" associated to your UC model
     - "eraa_edition": edition of ERAA data used - 2023.2 (one/two ERAA editions per year from 2021)
 
-- *elec-europe_params_to-be-modif.json*: containing parameters... **you can play with during this practical class**
+- *elec-europe_params_to-be-modif.json*: containing parameters... 
     - "selected_climatic_year": to **choose climatic year" considered for UC model (unique deterministic scenario)
     - "selected_countries": to **choose countries** that you would like to be part of your European - copper-plate - long-term UC model. N.B. Following yesterday's toy model test, only Italy is completed at first
     - "selected_agg_prod_types": **per country selection of the (generation unit) aggregate production types** to be part of your model. N.B. (i) Using aggregate production types, i.e. the ones of field "available_aggreg_prod_types" in file *elec-europe_params_fixed.json* (a two-level dictionary, providing per country and year available fields). (ii) Setting a value to "["all"]" will use all aggregate production types corresponding to ERAA data for current run
