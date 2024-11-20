@@ -12,16 +12,21 @@
         "all"
       ],
       "france": [
-        "nuclear"
+        "all"
       ]
     },
     "updated_capacities_prod_types": {
       "france": {
-        "nuclear": 100000.0
+        
       },
       "scandinavia": {
-        "nuclear": 100000.0
+        "gas" : 4400
+        
       }
-    }
+    },
+    "interco_capas_updated_values": {
+      "poland2scandinavia": 10000
+      }
+    
   }
   
