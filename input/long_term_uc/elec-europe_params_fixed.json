@@ -140,23 +140,21 @@
     "batteries": {
       "carrier": "flexibility",
       "p_min_pu": -1,
-      "marginal_cost": 40,
       "p_max_pu": 1
     },
     "biofuel": {
       "carrier": "biofuel",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost": 20,
-      "efficiency": 0.5,
+      "marginal_cost":10,
+      "efficiency": 1,
       "committable": "false"
     },
     "coal": {
       "carrier": "coal",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost": 30,
-      "efficiency":0.2,
+      "marginal_cost": 5,
       "committable": "false"
     },
     "dsr": {
@@ -164,8 +162,7 @@
       "max_hours": 3,
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost":50,
-      "efficiency":0.8,
+      "marginal_cost": 2,
       "cyclic_state_of_charge": "false"
     },
     "failure": {
@@ -173,23 +170,22 @@
       "p_min_pu": 0,
       "p_max_pu": 1,
       "efficiency": 1,
-      "marginal_cost":250,
+      "marginal_cost": 100,
       "committable": "false"
     },
     "gas": {
       "carrier": "gas",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost": 60,
-      "efficiency":0.2,
+      "efficiency": 0.5,
+      "marginal_cost": 15,
       "committable": "false"
     },
     "hydro_pondage": {
       "carrier": "hydro",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost": 2,
-      "efficiency":1,
+      "marginal_cost": 0.1,
       "committable": "false"
     },
     "hydro_pump_storage_closed_loop": {
@@ -197,8 +193,7 @@
       "p_min_pu": -1.02236,
       "p_max_pu": 1,
       "cyclic_state_of_charge": "false",
-      "marginal_cost": 300,
-      "efficiency":1,
+      "marginal_cost": 0.1,
       "committable": "false"
     },
     "hydro_pump_storage_open_loop": {
@@ -206,16 +201,14 @@
       "p_min_pu": -0.86796,
       "p_max_pu": 1,
       "cyclic_state_of_charge": "false",
-      "marginal_cost": 2,
-      "efficiency":1,
+      "marginal_cost": 0.1,
       "committable": "false"
     },
     "hydro_reservoir": {
       "carrier": "hydro",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost":2,
-      "efficiency":1,
+      "marginal_cost": 5,
       "committable": "false"
     },
     "hydro_run_of_river": {
@@ -223,23 +216,22 @@
       "p_min_pu": 1,
       "p_max_pu": 1,
       "efficiency": 1,
-      "marginal_cost":0,
+      "marginal_cost": 3,
       "committable": "false"
     },
     "nuclear": {
       "carrier": "nuclear",
       "p_min_pu": 0.25,
       "p_max_pu": 1,
-      "efficiency": 0.37,
-      "marginal_cost": 13,
+      "efficiency": 0.33,
+      "marginal_cost": 4,
       "committable": "false"
     },
     "oil": {
       "carrier": "oil",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost":100,
-      "efficiency":0.2,
+      "marginal_cost": 3,
       "committable": "false"
     },
     "others_fatal": {
@@ -247,40 +239,39 @@
       "p_min_pu": 1,
       "p_max_pu": 1,
       "efficiency": 0.4,
-      "marginal_cost":0,
+      "marginal_cost": 30,
       "committable": "false"
     },
     "solar_pv": {
       "carrier": "solar",
       "p_min_pu": 0,
-      "p_max_pu":1,
       "efficiency": 1,
-      "marginal_cost":0,
+      "marginal_cost": 1,
       "committable": "false"
     },
     "solar_thermal": {
       "carrier": "solar",
-      "p_min_pu": 0,      
-      "p_max_pu":1,
+      "p_min_pu": 0,
       "efficiency": 1,
-      "marginal_cost":0,
+      "marginal_cost": 1,
       "committable": "false"
     },
     "wind_offshore": {
       "carrier": "wind",
       "p_min_pu": 0,
-      "p_max_pu":1,
       "efficiency": 1,
-      "marginal_cost":0,
+      "marginal_cost": 2,
       "committable": "false"
     },
     "wind_onshore": {
       "carrier": "wind",
       "p_min_pu": 0,
-      "p_max_pu":1,
       "efficiency": 1,
-      "marginal_cost": 0
-  }, "units_complem_params_per_agg_pt":{
+      "marginal_cost": 1,
+      "committable": "false"
+    }
+  },
+  "units_complem_params_per_agg_pt": {
     "batteries": {
       "power_capa": "from_eraa_data",
       "init_soc_pu": "from_json_tb_modif"
@@ -322,6 +313,5 @@
       "p_max_pu": "from_eraa_data",
       "capa_factors": "from_eraa_data"
     }
-  }
   }
 }

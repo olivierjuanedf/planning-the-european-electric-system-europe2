@@ -1,5 +1,5 @@
 {
-  "selected_climatic_year": 2003,
+  "selected_climatic_year": 1989,
   "selected_countries": [
     "france",
     "italy",
@@ -19,10 +19,10 @@
     "poland": ["all"],
     "scandinavia": ["all"]
   },
-  "uc_period_start": "1900/7/1",
-  "uc_period_end": "1900/7/15",
-  "failure_power_capa": 1e10,
-  "failure_penalty": 1e5,
+  "uc_period_start": "1900/1/1",
+  "uc_period_end": "1900/1/15",
+  "failure_power_capa": 5e10,
+  "failure_penalty": 100,
   "interco_capas_updated_values": {
     "france2poland": 0,
     "france2scandinavia": 0,
