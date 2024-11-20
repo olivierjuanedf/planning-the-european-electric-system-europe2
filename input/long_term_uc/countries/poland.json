@@ -7,9 +7,16 @@
       "scandinavia": [
         "all"
       ]
+      ,
+      "italy": [
+        "all"
+      ],
+      "france": [
+        "nuclear"
+      ]
     },
     "updated_capacities_prod_types": {
-      "italy": {
+      "france": {
         "nuclear": 100000.0
       },
       "scandinavia": {
