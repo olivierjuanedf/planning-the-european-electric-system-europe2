@@ -23,6 +23,7 @@
   "uc_period_end": "1900/7/15",
   "failure_power_capa": 1e10,
   "failure_penalty": 1e5,
+  
   "interco_capas_updated_values": {
     "france2poland": 0,
     "france2scandinavia": 0,
