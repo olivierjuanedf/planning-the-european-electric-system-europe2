@@ -18,18 +18,18 @@
     ]
   },
   "updated_capacities_prod_types": {
-    "scandinavia": {
-      "wind_offshore": 244.30,
-      "gas": 100000.0,
-      "others_fatal": 100.0,
-      "dsr": 10.0,
-      "coal": 60000.60,
-      "oil": 158.00,
-      "wind_onshore": 3931.31,
-      "biofuel": 3273.41,
-      "nuclear": 112,
-      "failure": 1000000
-    }
+  "scandinavia": {
+    "wind_offshore": 2447.30,
+    "gas": 3324.86,
+    "others_fatal": 0.0,
+    "dsr": 10524.60,
+    "batteries": 0.00,
+    "coal": 866.60,
+    "oil": 1580.00,
+    "wind_onshore": 39318.31,
+    "biofuel": 3273.41,
+    "nuclear": 11277.0
+  }
   },
   "interco_capas_updated_values": {
     "france2poland": 0,

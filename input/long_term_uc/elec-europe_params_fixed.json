@@ -140,13 +140,14 @@
     "batteries": {
       "carrier": "flexibility",
       "p_min_pu": -1,
+      "marginal_cost": 40,
       "p_max_pu": 1
     },
     "biofuel": {
       "carrier": "biofuel",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost":10,
+      "marginal_cost": 20,
       "efficiency": 1,
       "committable": "false"
     },
@@ -154,7 +155,7 @@
       "carrier": "coal",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost": 5,
+      "marginal_cost": 30,
       "committable": "false"
     },
     "dsr": {
@@ -162,15 +163,15 @@
       "max_hours": 3,
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost": 2,
-      "cyclic_state_of_charge": "false"
+      "marginal_cost": 50,
+      "cyclic_state_of_charge": "true"
     },
     "failure": {
       "carrier": "failure",
       "p_min_pu": 0,
       "p_max_pu": 1,
       "efficiency": 1,
-      "marginal_cost": 100,
+      "marginal_cost": 250,
       "committable": "false"
     },
     "gas": {
@@ -178,8 +179,8 @@
       "p_min_pu": 0,
       "p_max_pu": 1,
       "efficiency": 0.5,
-      "marginal_cost": 15,
-      "committable": "false"
+      "marginal_cost": 49,
+      "committable": "true"
     },
     "hydro_pondage": {
       "carrier": "hydro",
@@ -208,7 +209,7 @@
       "carrier": "hydro",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost": 5,
+      "marginal_cost": 0.1,
       "committable": "false"
     },
     "hydro_run_of_river": {
@@ -216,7 +217,7 @@
       "p_min_pu": 1,
       "p_max_pu": 1,
       "efficiency": 1,
-      "marginal_cost": 3,
+      "marginal_cost": 0,
       "committable": "false"
     },
     "nuclear": {
@@ -224,14 +225,14 @@
       "p_min_pu": 0.25,
       "p_max_pu": 1,
       "efficiency": 0.33,
-      "marginal_cost": 4,
+      "marginal_cost": 9,
       "committable": "false"
     },
     "oil": {
       "carrier": "oil",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost": 3,
+      "marginal_cost": 100,
       "committable": "false"
     },
     "others_fatal": {
@@ -239,35 +240,35 @@
       "p_min_pu": 1,
       "p_max_pu": 1,
       "efficiency": 0.4,
-      "marginal_cost": 30,
+      "marginal_cost": 0,
       "committable": "false"
     },
     "solar_pv": {
       "carrier": "solar",
       "p_min_pu": 0,
       "efficiency": 1,
-      "marginal_cost": 1,
+      "marginal_cost": 0,
       "committable": "false"
     },
     "solar_thermal": {
       "carrier": "solar",
       "p_min_pu": 0,
       "efficiency": 1,
-      "marginal_cost": 1,
+      "marginal_cost": 0,
       "committable": "false"
     },
     "wind_offshore": {
       "carrier": "wind",
       "p_min_pu": 0,
       "efficiency": 1,
-      "marginal_cost": 2,
+      "marginal_cost": 0,
       "committable": "false"
     },
     "wind_onshore": {
       "carrier": "wind",
       "p_min_pu": 0,
       "efficiency": 1,
-      "marginal_cost": 1,
+      "marginal_cost": 0,
       "committable": "false"
     }
   },
