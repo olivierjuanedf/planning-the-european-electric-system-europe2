@@ -26,6 +26,7 @@
   "interco_capas_updated_values": {
     "france2poland": 0,
     "france2scandinavia": 0,
+    "france2germany":1e5,
     "italy2iberian-peninsula": 0,
     "italy2poland": 0,
     "italy2benelux": 0,
@@ -46,6 +47,6 @@
     "scandinavia2france": 0,
     "scandinavia2italy": 0,
     "scandinavia2iberian-peninsula": 0,
-    "germany2italy": 1e5
+    "germany2italy": 0
   }
 }

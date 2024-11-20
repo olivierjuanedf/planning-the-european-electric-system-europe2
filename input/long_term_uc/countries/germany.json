@@ -13,20 +13,17 @@
       "failure"
     ],
     "france":["all"],
-    "iberian-peninsula":["all"]
+    "benelux":["all"],
+    "scandinavia":["all"],
+    "poland":["all"]
   },
   "updated_capacities_prod_types": {
     "germany": {
-      "failure" : 100000,
-      "wind_offshore" : 11105,
-      "wind_onshore" : 69017.40,
-      "solar_pv" : 88447.85,
-      "coal" : 12786.24,
-      "gas" : 32541.30,
-      "others_fatal" : 3933.90,
-      "dsr" : 0.00,
-      "batteries" : 2188.91,
-      "oil" : 2821.33
+      "wind_offshore":250000
+      
+    },
+    "scandinavia":{
+      "nuclear":100000
     }
   }
 }

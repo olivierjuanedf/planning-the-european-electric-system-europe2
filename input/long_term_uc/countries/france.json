@@ -12,6 +12,8 @@
   "updated_capacities_prod_types": {
     "france": {
       "nuclear": 100000.0,
+      "solar_pv":80000,
+      "wind_onshore":250000,
       "failure": 100000.0
     }
   }
