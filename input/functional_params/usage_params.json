@@ -3,6 +3,8 @@
     "allow_overwriting_eraa_interco_capa_vals": "true",
     "allow_manually_adding_demand": "false",
     "allow_manually_adding_generators": "false",
-    "mode": "europe",
+
+    "mode": "solo",
     "team": "germany"
+
 }

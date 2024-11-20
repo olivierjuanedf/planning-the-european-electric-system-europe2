@@ -11,7 +11,7 @@
   },
   "updated_capacities_prod_types": {
     "france": {
-      "nuclear": 100000.0,
+      "nuclear": 10000.0,
       "failure": 100000.0
     }
   }
