@@ -3,6 +3,9 @@
     "allow_overwriting_eraa_interco_capa_vals": "true",
     "allow_manually_adding_demand": "false",
     "allow_manually_adding_generators": "false",
-    "mode": "europe",
-    "team": "germany"
+    "apply_cf_techno_breakthrough": "false",
+    "res_cf_stress_test_folder": null,
+    "res_cf_stress_test_cy": null,
+    "mode": "solo",
+    "team": "france"
 }

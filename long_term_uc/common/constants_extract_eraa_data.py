@@ -13,6 +13,9 @@ USAGE_PARAMS_SHORT_NAMES = {
     "allow_overwriting_eraa_interco_capa_vals": "overwriting_eraa_interco_capa_vals",
     "allow_manually_adding_demand": "manually_adding_demand",
     "allow_manually_adding_generators": "manually_adding_generators",
+    "apply_cf_techno_breakthrough": "apply_cf_techno_breakthrough",
+    "res_cf_stress_test_folder": "res_cf_stress_test_folder",
+    "res_cf_stress_test_cy": "res_cf_stress_test_cy", 
     "mode": "mode",
     "team": "team"
 }
@@ -65,6 +68,10 @@ class UsageParameters:
     manually_adding_generators: bool = False
     mode: Mode = "solo"
     team: Optional[str] = None
+    # parameters for climate-based "sensitivity" tests
+    apply_cf_techno_breakthrough: bool = False
+    res_cf_stress_test_folder: str = None
+    res_cf_stress_test_cy: int = None
 
     def check_types(self):
         """
