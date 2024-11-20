@@ -17,11 +17,25 @@
     },
     "updated_capacities_prod_types": {
       "france": {
-        
+        "hydro_reservoir" : 23400
       },
       "scandinavia": {
         "hydro_reservoir" : 54264
-        
+      },
+      "germany": {
+        "hydro_reservoir" : 5200
+      },
+      "iberian": {
+        "hydro_reservoir" : 19000
+      },
+      "poland": {
+        "hydro_reservoir" : 750
+      },
+      "italy": {
+        "hydro_reservoir" : 16000
+      },
+      "benelux": {
+        "hydro_reservoir" : 200
       }
     }    
   }
