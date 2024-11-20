@@ -36,9 +36,13 @@ Based on the numeric results obtained for each of the simulated configurations y
 * **interconnection capacities** -> how are your results sensitive to the limit on the flows that can be exchanged between your 7 countries? N.B. Playing with parameter "interco_capas_updated_values" in file *input/long_term_uc/elec-europe_params_to-be-modif.json* can give you some preliminar insights on this
 * (in solo mode) **What if... my neighbouring countries..." -> how are your individual country results sensitive to the decisions made by your neighbours? N.B. In solo mode you can exactly simulate the cases to try answering this question, by testing different configurations for your neighbours - in your own *{country}.json* file
 
-**Real runs** (UC model creation and resolution) will come this afternoon! (and after if you are motivated)
-
 ## Wednesday morning/afternoon session: on Investment Planning part
+
+You can start answering the following questions:
+* Can you **"progressively" make failure disappear** by investing in your country / Europe? Can be done iteratively by running: (i) A first UC configuration then; (ii) Observing when + how big is failure then; (iii) Adapting investments to make these values decrease; etc. 
+* Can you **find an "acceptable" trade-off between level of investment (€) and failure** (total "non-served" energy - to final consumers; or number of hours with failure)?
+
+A lot more that you can discuss in thiese sessions with Jean-Yves BOURMAUD, Alexis LEBEAU, and Cécile ROTTNER.
 
 # Appendices
 
