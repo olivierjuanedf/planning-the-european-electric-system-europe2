@@ -20,13 +20,9 @@
         
       },
       "scandinavia": {
-        "gas" : 4400
+        "hydro_reservoir" : 54264
         
       }
-    },
-    "interco_capas_updated_values": {
-      "poland2scandinavia": 10000
-      }
-    
+    }    
   }
   

@@ -166,7 +166,9 @@
         "oil",
         "wind_onshore",
         "biofuel",
-        "nuclear"
+        "nuclear",
+        "hydro_reservoir",
+        "hydro"
       ]
     }
   },
