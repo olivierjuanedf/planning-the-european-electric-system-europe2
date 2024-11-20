@@ -7,7 +7,23 @@
   },
   "updated_capacities_prod_types": {
     "benelux": {
-      "wind_offshore": 100000.0
+      "batteries": 0,
+      "biofuel": 1000,
+      "coal": 5000,
+      "dsr": 0,
+      "gas": 16000,
+      "hydro_pondage": 0,
+      "hydro_pump_storage_closed_loop": 0,
+      "hydro_pump_storage_open_loop": 0,
+      "hydro_reservoir": 700,
+      "hydro_run_of_river": 700,
+      "nuclear": 6500,
+      "oil": 0,
+      "others_fatal": 0,
+      "solar_pv": 9000,
+      "solar_thermal": 2000,
+      "wind_offshore": 4500,
+      "wind_onshore": 6000
     }
   }
 }
