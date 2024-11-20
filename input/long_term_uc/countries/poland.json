@@ -1,0 +1,20 @@
+{
+    "team": "poland",
+    "selected_prod_types": {
+      "poland": [
+        "all"
+      ],
+      "scandinavia": [
+        "all"
+      ]
+    },
+    "updated_capacities_prod_types": {
+      "italy": {
+        "nuclear": 100000.0
+      },
+      "scandinavia": {
+        "nuclear": 100000.0
+      }
+    }
+  }
+  
