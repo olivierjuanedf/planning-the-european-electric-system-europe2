@@ -89,6 +89,7 @@ if result[1] == pypsa_opt_resol_status:
 
   network.buses_t.marginal_price.plot.line(figsize=(8, 3), ylabel="Euro per MWh")
   plt.tight_layout()
+  plt.show()
   plt.savefig(get_price_figure(country='europe', year=uc_run_params.selected_target_year, climatic_year=uc_run_params.selected_climatic_year,
                              start_horizon=uc_run_params.uc_period_start)
                              )
