@@ -15,7 +15,7 @@
         "gas": 0.0,
         "oil": 0.0,
         "coal":0.0,
-        "solar_pv": ,
+        "solar_pv": 10,
         "failure": 100.0
       }
     }
