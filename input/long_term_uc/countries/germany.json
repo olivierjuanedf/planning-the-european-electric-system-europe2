@@ -11,7 +11,9 @@
       "oil",
       "wind_onshore",
       "failure"
-    ]
+    ],
+    "france":["all"],
+    "iberian-peninsula":["all"]
   },
   "updated_capacities_prod_types": {
     "germany": {

@@ -1,22 +1,10 @@
 {
     "team": "iberian-peninsula",
     "selected_prod_types": {
-      "iberian-peninsula": [
-        "gas",
-        "oil",
-        "coal",
-        "solar_pv",
-        "failure"
-
-      ]
+      "iberian-peninsula": ["all"]
     },
     "updated_capacities_prod_types": {
-      "france": {
-        "gas": 0.0,
-        "oil": 0.0,
-        "coal":0.0,
-        "solar_pv": 10,
-        "failure": 100.0
+      "iberian-peninsula": {
       }
     }
   }
