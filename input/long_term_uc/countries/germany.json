@@ -15,15 +15,15 @@
     "france":["all"],
     "benelux":["all"],
     "scandinavia":["all"],
-    "poland":["all"]
+    "poland":["all"],
+    "italy" : ["all"],
+    "iberian-peninsula":["all"]
   },
   "updated_capacities_prod_types": {
     "germany": {
-      "wind_offshore":250000
       
     },
     "scandinavia":{
-      "nuclear":100000
     }
   }
 }
