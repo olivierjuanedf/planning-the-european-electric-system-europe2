@@ -33,7 +33,12 @@
         "wind_onshore",
         "biofuel",
         "nuclear",
-        "solar_pv"
+        "solar_pv",
+        "hydro_pondage",
+        "hydro_pump_storage_closed_loop",
+        "hydro_pump_storage_open_loop",
+        "hydro_reservoir",
+        "hydro_run_of_river"
       ],
       "2033": [
         "wind_offshore",
@@ -45,7 +50,12 @@
         "wind_onshore",
         "biofuel",
         "nuclear",
-        "solar_pv"
+        "solar_pv",
+        "hydro_pondage",
+        "hydro_pump_storage_closed_loop",
+        "hydro_pump_storage_open_loop",
+        "hydro_reservoir",
+        "hydro_run_of_river"
       ]
     },
     "france": {
@@ -58,7 +68,12 @@
         "oil",
         "wind_onshore",
         "nuclear",
-        "solar_pv"
+        "solar_pv",
+        "hydro_pondage",
+        "hydro_pump_storage_closed_loop",
+        "hydro_pump_storage_open_loop",
+        "hydro_reservoir",
+        "hydro_run_of_river"
       ],
       "2033": [
         "wind_offshore",
@@ -68,7 +83,12 @@
         "batteries",
         "wind_onshore",
         "nuclear",
-        "solar_pv"
+        "solar_pv",
+        "hydro_pondage",
+        "hydro_pump_storage_closed_loop",
+        "hydro_pump_storage_open_loop",
+        "hydro_reservoir",
+        "hydro_run_of_river"
       ]
     },
     "germany": {
@@ -81,7 +101,12 @@
         "coal",
         "oil",
         "wind_onshore",
-        "solar_pv"
+        "solar_pv",
+        "hydro_pondage",
+        "hydro_pump_storage_closed_loop",
+        "hydro_pump_storage_open_loop",
+        "hydro_reservoir",
+        "hydro_run_of_river"
       ],
       "2033": [
         "wind_offshore",
@@ -91,7 +116,12 @@
         "batteries",
         "oil",
         "wind_onshore",
-        "solar_pv"
+        "solar_pv",
+        "hydro_pondage",
+        "hydro_pump_storage_closed_loop",
+        "hydro_pump_storage_open_loop",
+        "hydro_reservoir",
+        "hydro_run_of_river"
       ]
     },
     "iberian-peninsula": {
@@ -104,7 +134,12 @@
         "coal",
         "wind_onshore",
         "nuclear",
-        "solar_pv"
+        "solar_pv",
+        "hydro_pondage",
+        "hydro_pump_storage_closed_loop",
+        "hydro_pump_storage_open_loop",
+        "hydro_reservoir",
+        "hydro_run_of_river"
       ],
       "2033": [
         "wind_offshore",
@@ -114,7 +149,12 @@
         "batteries",
         "wind_onshore",
         "nuclear",
-        "solar_pv"
+        "solar_pv",
+        "hydro_pondage",
+        "hydro_pump_storage_closed_loop",
+        "hydro_pump_storage_open_loop",
+        "hydro_reservoir",
+        "hydro_run_of_river"
       ]
     },
     "italy": {
@@ -127,7 +167,12 @@
         "coal",
         "oil",
         "wind_onshore",
-        "solar_pv"
+        "solar_pv",
+        "hydro_pondage",
+        "hydro_pump_storage_closed_loop",
+        "hydro_pump_storage_open_loop",
+        "hydro_reservoir",
+        "hydro_run_of_river"
       ],
       "2033": [
         "wind_offshore",
@@ -136,7 +181,12 @@
         "dsr",
         "batteries",
         "wind_onshore",
-        "solar_pv"
+        "solar_pv",
+        "hydro_pondage",
+        "hydro_pump_storage_closed_loop",
+        "hydro_pump_storage_open_loop",
+        "hydro_reservoir",
+        "hydro_run_of_river"
       ]
     },
     "poland": {
@@ -146,7 +196,12 @@
         "coal",
         "wind_onshore",
         "biofuel",
-        "solar_pv"
+        "solar_pv",
+        "hydro_pondage",
+        "hydro_pump_storage_closed_loop",
+        "hydro_pump_storage_open_loop",
+        "hydro_reservoir",
+        "hydro_run_of_river"
       ],
       "2033": [
         "wind_offshore",
@@ -156,7 +211,12 @@
         "wind_onshore",
         "biofuel",
         "nuclear",
-        "solar_pv"
+        "solar_pv",
+        "hydro_pondage",
+        "hydro_pump_storage_closed_loop",
+        "hydro_pump_storage_open_loop",
+        "hydro_reservoir",
+        "hydro_run_of_river"
       ]
     },
     "scandinavia": {
@@ -171,7 +231,12 @@
         "wind_onshore",
         "biofuel",
         "nuclear",
-        "solar_pv"
+        "solar_pv",
+        "hydro_pondage",
+        "hydro_pump_storage_closed_loop",
+        "hydro_pump_storage_open_loop",
+        "hydro_reservoir",
+        "hydro_run_of_river"
       ],
       "2033": [
         "wind_offshore",
@@ -184,7 +249,12 @@
         "wind_onshore",
         "biofuel",
         "nuclear",
-        "solar_pv"
+        "solar_pv",
+        "hydro_pondage",
+        "hydro_pump_storage_closed_loop",
+        "hydro_pump_storage_open_loop",
+        "hydro_reservoir",
+        "hydro_run_of_river"
       ]
     }
   },

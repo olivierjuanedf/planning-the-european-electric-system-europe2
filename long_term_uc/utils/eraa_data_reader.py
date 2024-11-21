@@ -200,7 +200,8 @@ def get_countries_data(uc_run_params: UCRunParams, agg_prod_types_with_cf_data: 
                     'power_capacity_turbine': [0.0],
                     'power_capacity_pumping': [0.0],
                     'power_capacity_injection': [0.0],
-                    'power_capacity_offtake': [0.0]
+                    'power_capacity_offtake': [0.0],
+                    'energy_capacity': [0.0]
                 })
                 current_df_gen_capa = pd.concat([current_df_gen_capa, failure_df], ignore_index=True)
             

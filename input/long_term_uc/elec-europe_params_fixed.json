@@ -188,7 +188,7 @@
       "carrier": "hydro",
       "p_min_pu": -1.02236,
       "p_max_pu": 1,
-      "cyclic_state_of_charge": "false",
+      "cyclic_state_of_charge": "true",
       "marginal_cost": 0.1,
       "committable": "false"
     },
@@ -196,7 +196,7 @@
       "carrier": "hydro",
       "p_min_pu": -0.86796,
       "p_max_pu": 1,
-      "cyclic_state_of_charge": "false",
+      "cyclic_state_of_charge": "true",
       "marginal_cost": 0.1,
       "committable": "false"
     },

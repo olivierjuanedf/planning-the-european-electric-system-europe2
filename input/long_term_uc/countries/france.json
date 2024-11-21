@@ -2,17 +2,10 @@
   "team": "france",
   "selected_prod_types": {
     "france": [
-      "nuclear",
-      "failure"
-    ],
-    "germany": [
       "all"
     ]
   },
   "updated_capacities_prod_types": {
-    "france": {
-      "nuclear": 100000.0,
-      "failure": 100000.0
-    }
+    "france": {}
   }
 }

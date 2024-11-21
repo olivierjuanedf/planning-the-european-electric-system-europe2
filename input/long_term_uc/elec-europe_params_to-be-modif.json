@@ -2,22 +2,22 @@
   "selected_climatic_year": 1985,
   "selected_countries": [
     "france",
-    "italy",
     "germany",
+    "italy",
     "iberian-peninsula",
-    "poland",
     "benelux",
-    "scandinavia"
+    "scandinavia",
+    "poland"
   ],
   "selected_target_year": 2025,
   "selected_prod_types": {
-    "benelux": ["all"],
     "france": ["all"],
     "germany": ["all"],
-    "iberian-peninsula": ["all"],
     "italy": ["all"],
-    "poland": ["all"],
-    "scandinavia": ["all"]
+    "iberian-peninsula": ["all"],
+    "benelux": ["all"],
+    "scandinavia": ["all"],
+    "poland": ["all"]
   },
   "uc_period_start": "1900/1/1",
   "uc_period_end": "1900/1/15",
