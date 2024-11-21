@@ -6,6 +6,7 @@
       "gas",
       "others_fatal",
       "dsr",
+      "hydro_reservoir",
       "coal",
       "oil",
       "wind_onshore",
