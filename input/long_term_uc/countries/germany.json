@@ -24,6 +24,8 @@
       
     },
     "scandinavia":{
+      "wind_offshore" : 50000,
+      "hydro_reservoir" : 44882
     }
   }
 }

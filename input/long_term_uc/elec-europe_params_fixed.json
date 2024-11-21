@@ -155,7 +155,7 @@
       "carrier": "coal",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost": 50,
+      "marginal_cost": 30,
       "committable": "false"
     },
     "dsr": {
@@ -164,7 +164,7 @@
       "p_min_pu": 0,
       "p_max_pu": 1,
       "cyclic_state_of_charge": "true",
-      "marginal_cost": 20
+      "marginal_cost": 250
     },
     "failure": {
       "carrier": "failure",
@@ -172,7 +172,7 @@
       "p_max_pu": 1,
       "efficiency": 1,
       "committable": "false",
-      "marginal_cost": 1000
+      "marginal_cost": 300
     },
     "gas": {
       "carrier": "gas",
@@ -180,7 +180,7 @@
       "p_max_pu": 1,
       "efficiency": 0.5,
       "committable": "true",
-      "marginal_cost": 70
+      "marginal_cost": 40
     },
     "hydro_pondage": {
       "carrier": "hydro",
@@ -240,7 +240,7 @@
       "p_min_pu": 1,
       "p_max_pu": 1,
       "efficiency": 0.4,
-      "marginal_cost": 200,
+      "marginal_cost": 0,
       "committable": "false"
     },
     "solar_pv": {

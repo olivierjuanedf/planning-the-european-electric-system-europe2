@@ -22,20 +22,22 @@
   "uc_period_start": "1900/1/1",
   "uc_period_end": "1900/1/15",
   "failure_power_capa": 1e10,
-  "failure_penalty": 1e5,
+  "failure_penalty": 500,
   "interco_capas_updated_values": {
     "france2poland": 0,
     "france2scandinavia": 0,
-    "france2germany":1e5,
-    "germany2scandinavia":1e5,
-    "scandinavia2germany" : 1e5,
-    "poland2germany" : 1e5,
-    "germany2poland" : 1e5,
+    "france2germany":2210,
+    "germany2scandinavia":5540,
+    "scandinavia2germany" : 5540,
+    "poland2scandinavia" : 600,
+    "poland2germany" : 1510 ,
+    "germany2poland" : 1510 ,
     "italy2iberian-peninsula": 0,
     "italy2poland": 0,
     "italy2benelux": 0,
     "italy2scandinavia": 0,
     "germany2iberian-peninsula": 0,
+    "iberian-peninsula2france": 2800,
     "iberian-peninsula2italy": 0,
     "iberian-peninsula2germany": 0,
     "iberian-peninsula2poland": 0,
@@ -51,6 +53,6 @@
     "scandinavia2france": 0,
     "scandinavia2italy": 0,
     "scandinavia2iberian-peninsula": 0,
-    "germany2italy": 0
+    "germany2italy": 1609
   }
 }
