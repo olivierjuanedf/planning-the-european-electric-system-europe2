@@ -7,6 +7,10 @@
     2010,
     2016
   ],
+  "climatic_years_stress_test": [
+    1985,
+    1987
+  ],
   "countries": [
     "benelux",
     "france",

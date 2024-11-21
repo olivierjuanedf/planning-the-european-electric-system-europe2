@@ -102,6 +102,8 @@ class ERAADatasetDescr:
     pypsa_unit_params_per_agg_pt: Dict[str, dict]  # dict of per aggreg. prod type main Pypsa params
     # for each aggreg. prod type, a dict. {complem. param name: source - "from_json_tb_modif"/"from_eraa_data"}
     units_complem_params_per_agg_pt: Dict[str, Dict[str, str]]
+    # for a stress test to be done, on an additional set of climatic years
+    available_climatic_years_stress_test: List[int] = None
 
     def check_types(self):
         """
