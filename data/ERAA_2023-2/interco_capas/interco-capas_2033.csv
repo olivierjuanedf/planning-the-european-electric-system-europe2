@@ -1,0 +1,12 @@
+zone_origin;zone_destination;type;value
+benelux;france;ac;3800
+benelux;germany;hdac;5000
+benelux;scandinavia;hvdc;1400
+france;benelux;ac;5300
+france;germany;ac;4800
+france;italy;hvac;3138
+france;iberian-peninsula;hvac;5000
+germany;poland;ac;4864
+germany;scandinavia;hvac;3500
+germany;scandinavia;hvdc;3300
+poland;scandinavia;hvac;600
