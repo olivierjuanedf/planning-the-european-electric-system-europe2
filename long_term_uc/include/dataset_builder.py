@@ -18,6 +18,8 @@ class GenUnitsPypsaParams:
     capa_factors: str = "p_max_pu" 
     power_capa: str = "p_nom"
     energy_capa: str = None
+    marginal_cost: str = "marginal_cost"
+    co2_emissions: str = "co2_emissions"  # TODO: check that aligned on PyPSA generators attribute names
 
 
 GEN_UNITS_PYPSA_PARAMS = GenUnitsPypsaParams()
@@ -50,13 +52,21 @@ def get_val_of_agg_pt_in_df(df_data: pd.DataFrame, prod_type_agg_col: str,
         return np.array(df_data[df_data[prod_type_agg_col] == agg_prod_type][value_col])
 
 
+UNIT_NAME_SEP = "_"
+
+
 def set_country_trigram(country: str) -> str:
     return f"{country[:3].lower()}"
 
 
+def get_prod_type_from_unit_name(prod_unit_name: str) -> str:
+    len_country_suffix = 3 + len(UNIT_NAME_SEP)
+    return prod_unit_name[len_country_suffix:]
+
+
 def set_gen_unit_name(country: str, agg_prod_type: str) -> str:
     country_trigram = set_country_trigram(country=country)
-    return f"{country_trigram}_{agg_prod_type}"
+    return f"{country_trigram}{UNIT_NAME_SEP}{agg_prod_type}"
 
 
 GEN_UNITS_DATA_TYPE = Dict[str, List[GenerationUnitData]]
@@ -132,9 +142,18 @@ def get_generation_units_data(uc_run_params: UCRunParams,
 
 
 def overwrite_gen_units_fuel_src_params(generation_units_data: GEN_UNITS_DATA_TYPE, updated_fuel_sources_params: Dict[str, Dict[str, float]]) -> GEN_UNITS_DATA_TYPE:
-    for country, units_data in generation_units_data.items():
+    for _, units_data in generation_units_data.items():
+        # loop over all units in current country
+        for indiv_unit_data in units_data:
+            current_prod_type = get_prod_type_from_unit_name(prod_unit_name=indiv_unit_data.name)
+            if current_prod_type in updated_fuel_sources_params:
+                # TODO: add CO2 emissions, and merge both case? Q2OJ: how-to properly?
+                if GEN_UNITS_PYPSA_PARAMS.marginal_cost in updated_fuel_sources_params[current_prod_type]:
+                    indiv_unit_data.marginal_cost = updated_fuel_sources_params[current_prod_type][GEN_UNITS_PYPSA_PARAMS.marginal_cost]
+
         # TODO: from units data info on fuel source extract and apply updated params values
-        updated_fuel_sources_params = bob
+        updated_fuel_sources_params = None
+
 
 def control_min_pypsa_params_per_gen_units(generation_units_data: Dict[str, List[GenerationUnitData]],
                                            pypsa_min_unit_params_per_agg_pt: Dict[str, List[str]]):
