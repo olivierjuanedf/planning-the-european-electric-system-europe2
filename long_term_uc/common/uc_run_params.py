@@ -151,6 +151,12 @@ class UCRunParams:
         if not (MIN_DATE_IN_DATA <= self.uc_period_end <= MAX_DATE_IN_DATA):
             errors_list.append(f"UC period end {self.uc_period_end.strftime(DATE_FORMAT)} not in allowed period {allowed_period_msg}")
 
+        # updated fuel sources params -> check non-negative marginal cost and CO2 emission values
+        for source, params in self.updated_fuel_sources_params.items():
+            for name, val in params.items():
+                if val < 0:
+                    errors_list.append(f"Updated fuel source {source} param {name} must be non-negative; but value read {val}")
+
         # stop if any error
         if len(errors_list) > 0:
             uncoherent_param_stop(param_errors=errors_list)
