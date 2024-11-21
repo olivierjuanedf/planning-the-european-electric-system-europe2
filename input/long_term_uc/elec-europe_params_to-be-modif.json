@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "selected_climatic_year": 2003,
+=======
+  "selected_climatic_year": 2016,
+>>>>>>> origin/poland3
   "selected_countries": [
     "france",
     "italy",
@@ -9,7 +13,7 @@
     "benelux",
     "scandinavia"
   ],
-  "selected_target_year": 2025,
+  "selected_target_year": 2033,
   "selected_prod_types": {
     "benelux": ["all"],
     "france": ["all"],

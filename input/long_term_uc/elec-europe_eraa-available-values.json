@@ -32,7 +32,9 @@
         "oil",
         "wind_onshore",
         "biofuel",
-        "nuclear"
+        "nuclear",
+        "hydro_reservoir",
+        "solar_pv"
       ],
       "2033": [
         "wind_offshore",
@@ -43,7 +45,9 @@
         "oil",
         "wind_onshore",
         "biofuel",
-        "nuclear"
+        "nuclear",
+        "hydro_reservoir",
+        "solar_pv"
       ]
     },
     "france": {
@@ -55,7 +59,9 @@
         "batteries",
         "oil",
         "wind_onshore",
-        "nuclear"
+        "nuclear",
+        "hydro_reservoir",
+        "solar_pv"
       ],
       "2033": [
         "wind_offshore",
@@ -64,7 +70,9 @@
         "dsr",
         "batteries",
         "wind_onshore",
-        "nuclear"
+        "nuclear",
+        "hydro_reservoir",
+        "solar_pv"
       ]
     },
     "germany": {
@@ -76,7 +84,9 @@
         "batteries",
         "coal",
         "oil",
-        "wind_onshore"
+        "wind_onshore",
+        "hydro_reservoir",
+        "solar_pv"
       ],
       "2033": [
         "wind_offshore",
@@ -85,7 +95,9 @@
         "dsr",
         "batteries",
         "oil",
-        "wind_onshore"
+        "wind_onshore",
+        "hydro_reservoir",
+        "solar_pv"
       ]
     },
     "iberian-peninsula": {
@@ -97,7 +109,9 @@
         "batteries",
         "coal",
         "wind_onshore",
-        "nuclear"
+        "nuclear",
+        "hydro_reservoir",
+        "solar_pv"
       ],
       "2033": [
         "wind_offshore",
@@ -106,7 +120,9 @@
         "dsr",
         "batteries",
         "wind_onshore",
-        "nuclear"
+        "nuclear",
+        "hydro_reservoir",
+        "solar_pv"
       ]
     },
     "italy": {
@@ -119,6 +135,10 @@
         "coal",
         "oil",
         "wind_onshore",
+<<<<<<< HEAD
+=======
+        "hydro_reservoir",
+>>>>>>> origin/poland3
         "solar_pv"
       ],
       "2033": [
@@ -127,7 +147,9 @@
         "others_fatal",
         "dsr",
         "batteries",
-        "wind_onshore"
+        "wind_onshore",
+        "hydro_reservoir",
+        "solar_pv"
       ]
     },
     "poland": {
@@ -136,7 +158,9 @@
         "others_fatal",
         "coal",
         "wind_onshore",
-        "biofuel"
+        "biofuel",
+        "hydro_reservoir",
+        "solar_pv"
       ],
       "2033": [
         "wind_offshore",
@@ -145,7 +169,9 @@
         "coal",
         "wind_onshore",
         "biofuel",
-        "nuclear"
+        "nuclear",
+        "hydro_reservoir",
+        "solar_pv"
       ]
     },
     "scandinavia": {
@@ -159,7 +185,9 @@
         "oil",
         "wind_onshore",
         "biofuel",
-        "nuclear"
+        "nuclear",
+        "hydro_reservoir",
+        "solar_pv"
       ],
       "2033": [
         "wind_offshore",
@@ -171,7 +199,9 @@
         "oil",
         "wind_onshore",
         "biofuel",
-        "nuclear"
+        "nuclear",
+        "hydro_reservoir",
+        "solar_pv"
       ]
     }
   },

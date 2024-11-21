@@ -1,0 +1,49 @@
+{
+    "team": "poland",
+    "selected_prod_types": {
+      "poland": [
+        "all"
+      ],
+      "scandinavia": [
+        "all"
+      ]
+      ,
+      "italy": [
+        "all"
+      ],
+      "france": [
+        "all"
+      ]
+    },
+    "updated_capacities_prod_types": {
+      "france": {
+        "hydro_reservoir" : 23400,
+        "solar_pv" : 18184.99
+      },
+      "scandinavia": {
+        "hydro_reservoir" : 54264,
+        "solar_pv" : 12108.45
+      },
+      "germany": {
+        "hydro_reservoir" : 5200,
+        "solar_pv" : 88447.85
+      },
+      "iberian": {
+        "hydro_reservoir" : 19000,
+        "solar_pv" : 40177.08
+      },
+      "poland": {
+        "hydro_reservoir" : 750,
+        "solar_pv" : 16049.00
+      },
+      "italy": {
+        "hydro_reservoir" : 16000,
+        "solar_pv" : 39954.39
+      },
+      "benelux": {
+        "hydro_reservoir" : 200,
+        "solar_pv" : 47892.74
+      }
+    }    
+  }
+  
