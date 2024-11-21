@@ -148,7 +148,7 @@
       "p_min_pu": 0,
       "p_max_pu": 1,
       "marginal_cost": 20,
-      "efficiency": 1,
+      "efficiency": 0.5,
       "committable": "false"
     },
     "coal": {
@@ -156,6 +156,7 @@
       "p_min_pu": 0,
       "p_max_pu": 1,
       "marginal_cost": 30,
+      "efficiency":0.2,
       "committable": "false"
     },
     "dsr": {
@@ -163,30 +164,32 @@
       "max_hours": 3,
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost": 50,
-      "cyclic_state_of_charge": "true"
+      "marginal_cost":50,
+      "efficiency":0.8,
+      "cyclic_state_of_charge": "false"
     },
     "failure": {
       "carrier": "failure",
       "p_min_pu": 0,
       "p_max_pu": 1,
       "efficiency": 1,
-      "marginal_cost": 250,
+      "marginal_cost":250,
       "committable": "false"
     },
     "gas": {
       "carrier": "gas",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "efficiency": 0.5,
-      "marginal_cost": 49,
-      "committable": "true"
+      "marginal_cost": 60,
+      "efficiency":0.2,
+      "committable": "false"
     },
     "hydro_pondage": {
       "carrier": "hydro",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost": 0.1,
+      "marginal_cost": 2,
+      "efficiency":1,
       "committable": "false"
     },
     "hydro_pump_storage_closed_loop": {
@@ -194,7 +197,8 @@
       "p_min_pu": -1.02236,
       "p_max_pu": 1,
       "cyclic_state_of_charge": "false",
-      "marginal_cost": 0.1,
+      "marginal_cost": 300,
+      "efficiency":1,
       "committable": "false"
     },
     "hydro_pump_storage_open_loop": {
@@ -202,14 +206,16 @@
       "p_min_pu": -0.86796,
       "p_max_pu": 1,
       "cyclic_state_of_charge": "false",
-      "marginal_cost": 0.1,
+      "marginal_cost": 2,
+      "efficiency":1,
       "committable": "false"
     },
     "hydro_reservoir": {
       "carrier": "hydro",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost": 0.1,
+      "marginal_cost":2,
+      "efficiency":1,
       "committable": "false"
     },
     "hydro_run_of_river": {
@@ -217,22 +223,23 @@
       "p_min_pu": 1,
       "p_max_pu": 1,
       "efficiency": 1,
-      "marginal_cost": 0,
+      "marginal_cost":0,
       "committable": "false"
     },
     "nuclear": {
       "carrier": "nuclear",
       "p_min_pu": 0.25,
       "p_max_pu": 1,
-      "efficiency": 0.33,
-      "marginal_cost": 9,
+      "efficiency": 0.37,
+      "marginal_cost": 13,
       "committable": "false"
     },
     "oil": {
       "carrier": "oil",
       "p_min_pu": 0,
       "p_max_pu": 1,
-      "marginal_cost": 100,
+      "marginal_cost":100,
+      "efficiency":0.2,
       "committable": "false"
     },
     "others_fatal": {
@@ -240,39 +247,40 @@
       "p_min_pu": 1,
       "p_max_pu": 1,
       "efficiency": 0.4,
-      "marginal_cost": 0,
+      "marginal_cost":0,
       "committable": "false"
     },
     "solar_pv": {
       "carrier": "solar",
       "p_min_pu": 0,
+      "p_max_pu":1,
       "efficiency": 1,
-      "marginal_cost": 0,
+      "marginal_cost":0,
       "committable": "false"
     },
     "solar_thermal": {
       "carrier": "solar",
-      "p_min_pu": 0,
+      "p_min_pu": 0,      
+      "p_max_pu":1,
       "efficiency": 1,
-      "marginal_cost": 0,
+      "marginal_cost":0,
       "committable": "false"
     },
     "wind_offshore": {
       "carrier": "wind",
       "p_min_pu": 0,
+      "p_max_pu":1,
       "efficiency": 1,
-      "marginal_cost": 0,
+      "marginal_cost":0,
       "committable": "false"
     },
     "wind_onshore": {
       "carrier": "wind",
       "p_min_pu": 0,
+      "p_max_pu":1,
       "efficiency": 1,
-      "marginal_cost": 0,
-      "committable": "false"
-    }
-  },
-  "units_complem_params_per_agg_pt": {
+      "marginal_cost": 0
+  }, "units_complem_params_per_agg_pt":{
     "batteries": {
       "power_capa": "from_eraa_data",
       "init_soc_pu": "from_json_tb_modif"
@@ -314,5 +322,6 @@
       "p_max_pu": "from_eraa_data",
       "capa_factors": "from_eraa_data"
     }
+  }
   }
 }

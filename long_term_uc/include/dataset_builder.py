@@ -349,7 +349,7 @@ def plot_uc_run_figs(network, countries: List[str]):
     plt.savefig(get_prod_figure(country=country, year=year, start_horizon=uc_run_params.uc_period_start))
     plt.tight_layout()
 
-    # Finally, "marginal prices" -> meaning? How can you interprete the very constant value plotted?
+    # Finally, "marginal prices" -> meaning? How can you interpret the very constant value plotted?
     network.buses_t.marginal_price.mean(1).plot.area(figsize=(8, 3), ylabel="Euro per MWh")
     plt.savefig(get_price_figure(country=country, year=year, start_horizon=uc_run_params.uc_period_start))
     plt.tight_layout()

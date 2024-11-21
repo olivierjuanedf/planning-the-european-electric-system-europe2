@@ -19,8 +19,8 @@
     "poland": ["all"],
     "scandinavia": ["all"]
   },
-  "uc_period_start": "1900/1/1",
-  "uc_period_end": "1900/1/15",
+  "uc_period_start": "1900/7/1",
+  "uc_period_end": "1900/7/15",
   "failure_power_capa": 1e10,
   "failure_penalty": 1e5,
   "interco_capas_updated_values": {

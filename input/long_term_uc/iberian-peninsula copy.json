@@ -1,0 +1,61 @@
+{
+    "team": "iberian-peninsula",
+    "selected_prod_types": {
+      "iberian-peninsula": ["all"],
+      "germany":["all"],
+      "italy":["all"],
+      "scandinavia":["all"],
+      "poland":["all"],
+      "benelux":["all"],
+      "france":["all"]
+    },
+    "updated_capacities_prod_types": {
+      "italy": {
+        "failure":0.0,
+        "hydro_pump_storage_closed_loop":30000,
+        "hydro_reservoir":10000,
+        "hydro_pondage":20000
+      },
+      "germany": {
+        "nuclear":20000,
+        "gas":10000,
+        "oil":10000,
+        "dsr":5000,
+        "hydro_pump_storage_closed_loop":20000,
+        "failure":0.0
+      },
+      "poland": {
+        "gas":20000,
+        "wind_offshore":10000,
+        "failure":0.0,
+        "hydro_pump_storage_closed_loop":20000
+      },
+      "scandinavia": {
+        "others_fatal":10000,
+        "biofuel":2000,
+        "failure":0.0,
+        "hydro_pump_storage_closed_loop":40000
+      },
+      "benelux": {
+        "nuclear":20000,
+        "dsr":3000,
+        "failure":0.0,
+        "hydro_pump_storage_closed_loop":20000
+      },
+      "iberian-peninsula":{
+        "nuclear":30000,
+        "dsr":5000,
+        "solar_pv":20000,
+        "solar_thermal":20000,
+        "batteries":5000,
+        "failure":0.0
+      },
+      "france": {
+        "solar_pv":20000,
+        "dsr":2000,
+        "failure":0.0,
+        "hydro_pump_storage_closed_loop":30000
+      }     
+  }
+}
+  

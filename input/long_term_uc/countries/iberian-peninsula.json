@@ -1,0 +1,39 @@
+{
+    "team": "iberian-peninsula",
+    "selected_prod_types": {
+      "iberian-peninsula": ["all"],
+      "germany":["all"],
+      "italy":["all"],
+      "scandinavia":["all"],
+      "poland":["all"],
+      "benelux":["all"],
+      "france":["all"]
+    },
+    "updated_capacities_prod_types": {
+      "italy": {
+        "failure":50000.0,
+        "solar_pv":20000,
+        "hydro_pump_storage_closed_loop":10000
+      },
+      "germany": {
+  
+        "failure":50000.0
+      },
+      "poland": {
+        "failure":50000.0
+      },
+      "scandinavia": {
+        "failure":50000.0
+      },
+      "benelux": {
+        "failure":50000.0
+      },
+      "iberian-peninsula":{
+        "failure":50000.0
+      },
+      "france": {
+        "failure":50000.0
+      }     
+  }
+}
+  
