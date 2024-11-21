@@ -1,6 +1,7 @@
 import os
 from dataclasses import dataclass
 from datetime import datetime
+from typing import List
 
 
 @dataclass
@@ -83,7 +84,11 @@ def get_json_params_tb_modif_file() -> str:
     return os.path.join(INPUT_LT_UC_SUBFOLDER, "elec-europe_params_to-be-modif.json")
 
 
-def get_json_params_modif_country_files():
+def get_json_fuel_sources_tb_modif_file() -> str:
+    return os.path.join(INPUT_LT_UC_SUBFOLDER, "fuel_sources_to-be_modif.json")
+
+
+def get_json_params_modif_country_files() -> List[str]:
     return map(
         lambda x: os.path.join(INPUT_LT_UC_COUNTRY_SUBFOLDER, x),
         filter(lambda x: x.endswith('.json'),

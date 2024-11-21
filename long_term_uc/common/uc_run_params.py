@@ -36,6 +36,7 @@ class UCRunParams:
     failure_penalty: float = None
     interco_capas_updated_values: Union[Dict[str, float], Dict[Tuple[str, str], float]] = field(default_factory=dict)
     updated_capacities_prod_types: Dict[str, Optional[Dict[str, float]]] = field(default_factory=dict)
+    updated_fuel_sources_params: Dict[str, Dict[str, Optional[float]]] = None
 
     def __repr__(self):
         repr_str = "UC long-term model run with params:"
@@ -75,6 +76,13 @@ class UCRunParams:
         print('*'*30)
         print(self.selected_prod_types)
         print('*'*30)
+        # keep only updated source params values that are non None
+        new_updated_fuel_source_params = {}
+        for source, params in self.updated_fuel_sources_params.items():
+            new_params = {name: val for name, val in params.items() if val is not None}
+            if len(new_params) > 0:
+                new_updated_fuel_source_params[source] = new_params
+        self.updated_fuel_sources_params = new_updated_fuel_source_params
 
     def coherence_check(self, eraa_data_descr: ERAADatasetDescr, year: int):
         errors_list = []
