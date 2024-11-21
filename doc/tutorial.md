@@ -42,7 +42,29 @@ You can start answering the following questions:
 * Can you **"progressively" make failure disappear** by investing in your country / Europe? Can be done iteratively by running: (i) A first UC configuration then; (ii) Observing when + how big is failure then; (iii) Adapting investments to make these values decrease; etc. 
 * Can you **find an "acceptable" trade-off between level of investment (€) and failure** (total "non-served" energy - to final consumers; or number of hours with failure)?
 
-A lot more that you can discuss in thiese sessions with Jean-Yves BOURMAUD, Alexis LEBEAU, and Cécile ROTTNER.
+A lot more that you can discuss in these sessions with Jean-Yves BOURMAUD, Alexis LEBEAU, and Cécile ROTTNER.
+
+## Thursday morning session: with a focus on climate change
+
+Start by a **"side step" on collective european objective/organization to build your electricity system**, and input data - in relation to climate change. **Without any UC run this morning**.
+
+### "Connecting" your team countries
+
+First it is **high time to have a collective discussion - negotiation? - in your European groups** to:
+* **Set a collective goal/target** ("energy politics"): monetary-based? CO2-based? A fairness aspect (how failure is shared between the countries/costly or impacting for them)?
+* And **deduce from this how you can** - start to... - (i) **provide numerical answers to the associated decision-making and; (ii) **share the tasks** to be done in your group.
+
+Note in particular **two tasks that can be done to prepare the final synthesis to be presented to the jury tomorrow**:
+1. **Further (first?) analysis of input data** -> what are some metrics known a priori (i.e. based only on the content of */data* folder) that can give you a first intuition on how complex (costly? CO2 emitting?) it will be to meet your target. In this direction, some - simple - statistical analysis of input data, and associated plots, can be prepared. It will be very useful for your presentation of tomorrow
+2. Some **postprocessing "tools" (simple Excel file/Python script - outside of the "codespace" environment - with a few calculation/plot functionalities) can be prepared** in order to automatically get some aggregated metrics to understand, the explain to the jury, the main results that you will have obtained.
+
+### A climatic "stress-test" to be prepared this morning
+
+Again, without any run this morning, we will prepare a stress-test to be numerically simulated this afternoon: what if very cold/hot climatic year to be operated (with UC problem) by my electricity system?
+
+After pulling the repot, you now have access to a new subfolder "cy_stress-test" in both */data/demand* and */data/res_capa-factors*. In these two subfolders new demand and RES capacity factor files are available. N.B. Even if sharing the have the same names as the ones in the "main" demand and RES capacity factors folders they contain data associated to two new climatic years: 1985 and 1987.
+
+**The question is now: what if a very cold year (1985 or 1987) or hot one (2003)?** What can you expect based on the input data? Simulation to come this afternoon to confirm your intuitions...
 
 # Appendices
 
