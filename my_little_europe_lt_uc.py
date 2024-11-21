@@ -29,8 +29,8 @@ print(f"Read needed ERAA ({eraa_data_descr.eraa_edition}) data for period {uc_pe
 demand, agg_cf_data, agg_gen_capa_data, interco_capas = \
   get_countries_data(uc_run_params=uc_run_params,
                      agg_prod_types_with_cf_data=eraa_data_descr.agg_prod_types_with_cf_data,
-                     aggreg_prod_types_def=eraa_data_descr.aggreg_prod_types_def
-                     )
+                     aggreg_prod_types_def=eraa_data_descr.aggreg_prod_types_def, 
+                     is_stress_test=uc_run_params.is_stress_test)
 
 print("Get generation units data, from both ERAA data - read just before - and JSON parameter file")
 generation_units_data = \

@@ -137,6 +137,37 @@ def get_generation_units_data(uc_run_params: UCRunParams,
                 current_assets_data[agg_pt]['marginal_cost'] = uc_run_params.failure_penalty
                 current_assets_data[agg_pt]['committable'] = False
             current_assets_data[agg_pt]['p_nom'] = agg_gen_capa_data[country].loc[agg_gen_capa_data[country]['production_type_agg']==agg_pt, 'power_capacity'].iloc[0]
+            energy_capacity = agg_gen_capa_data[country].loc[agg_gen_capa_data[country]['production_type_agg']==agg_pt, 'energy_capacity'].iloc[0]
+            power_capacity_turbine = agg_gen_capa_data[country].loc[agg_gen_capa_data[country]['production_type_agg']==agg_pt, 'power_capacity_turbine'].iloc[0]
+            if energy_capacity > 0:
+                power_capacity_pumping = agg_gen_capa_data[country].loc[agg_gen_capa_data[country]['production_type_agg']==agg_pt, 'power_capacity_pumping'].iloc[0]
+                if power_capacity_turbine > 0:
+                    p_nom = max(abs(power_capacity_turbine), abs(power_capacity_pumping))
+                    p_min_pu = power_capacity_pumping / p_nom
+                    p_max_pu = power_capacity_turbine / p_nom
+                    current_assets_data[agg_pt]['p_nom'] = p_nom
+                    current_assets_data[agg_pt]['p_min_pu'] = p_min_pu
+                    current_assets_data[agg_pt]['p_max_pu'] = p_max_pu
+                    max_hours = energy_capacity / p_nom
+                    current_assets_data[agg_pt]['max_hours'] = max_hours
+                power_capacity_injection = agg_gen_capa_data[country].loc[agg_gen_capa_data[country]['production_type_agg']==agg_pt, 'power_capacity_injection'].iloc[0]
+                power_capacity_offtake = agg_gen_capa_data[country].loc[agg_gen_capa_data[country]['production_type_agg']==agg_pt, 'power_capacity_offtake'].iloc[0]
+                if power_capacity_injection > 0:
+                    p_nom = max(abs(power_capacity_injection), abs(power_capacity_offtake))
+                    p_min_pu = -power_capacity_offtake / p_nom
+                    p_max_pu = power_capacity_injection / p_nom
+                    current_assets_data[agg_pt]['p_nom'] = p_nom
+                    current_assets_data[agg_pt]['p_min_pu'] = p_min_pu
+                    current_assets_data[agg_pt]['p_max_pu'] = p_max_pu
+                    max_hours = energy_capacity / p_nom
+                    current_assets_data[agg_pt]['max_hours'] = max_hours
+            elif power_capacity_turbine > 0:
+                    p_nom = abs(power_capacity_turbine)
+                    current_assets_data[agg_pt]['p_nom'] = p_nom
+                    current_assets_data[agg_pt]['p_min_pu'] = 0
+                    current_assets_data[agg_pt]['p_max_pu'] = 1
+                
+            
             generation_units_data[country].append(GenerationUnitData(**current_assets_data[agg_pt]))
     return generation_units_data
 
@@ -205,7 +236,8 @@ def add_energy_carrier(network, fuel_sources: Dict[str, FuelSources]):
     return network
 
 
-STORAGE_LIKE_UNITS = ["batteries"]
+STORAGE_LIKE_UNITS = ["batteries", "flexibility",         "hydro"
+]
 
 
 def add_generators(network, generators_data: Dict[str, List[GenerationUnitData]]):
@@ -214,11 +246,12 @@ def add_generators(network, generators_data: Dict[str, List[GenerationUnitData]]
         country_bus_name = get_country_bus_name(country=country)
         for gen_unit_data in gen_units_data:
             pypsa_gen_unit_dict = gen_unit_data.__dict__
-            if gen_unit_data.type in STORAGE_LIKE_UNITS:
+            if pypsa_gen_unit_dict.get('max_hours', None) is not None:
                 network.add("StorageUnit", bus=f"{country_bus_name}", **pypsa_gen_unit_dict)
             else:
                 network.add("Generator", bus=f"{country_bus_name}", **pypsa_gen_unit_dict)
     print("Considered generators", network.generators)
+    print("Considered storage units", network.storage_units)
     return network
 
 

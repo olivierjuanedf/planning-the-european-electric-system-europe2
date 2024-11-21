@@ -53,7 +53,7 @@ DT_FILE_PREFIX = DtFilePrefix()
 DT_SUBFOLDERS = DtSubfolders()
 FILES_FORMAT = FilesFormat()
 GEN_CAPA_SUBDT_COLS = ["power_capacity", "power_capacity_turbine", "power_capacity_pumping", 
-                       "power_capacity_injection", "power_capacity_offtake"]
+                       "power_capacity_injection", "power_capacity_offtake", "energy_capacity"]
 INPUT_ERAA_FOLDER = "data/ERAA_2023-2"
 INPUT_FOLDER = "input"
 INPUT_LT_UC_SUBFOLDER = f"{INPUT_FOLDER}/long_term_uc"
