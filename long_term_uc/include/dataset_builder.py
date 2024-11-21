@@ -59,11 +59,14 @@ def set_gen_unit_name(country: str, agg_prod_type: str) -> str:
     return f"{country_trigram}_{agg_prod_type}"
 
 
+GEN_UNITS_DATA_TYPE = Dict[str, List[GenerationUnitData]]
+
+
 def get_generation_units_data(uc_run_params: UCRunParams,
                               pypsa_unit_params_per_agg_pt: Dict[str, dict], 
                               units_complem_params_per_agg_pt: Dict[str, Dict[str, str]], 
                               agg_res_cf_data: Dict[str, pd.DataFrame], 
-                              agg_gen_capa_data: Dict[str, pd.DataFrame]) -> Dict[str, List[GenerationUnitData]]:
+                              agg_gen_capa_data: Dict[str, pd.DataFrame]) -> GEN_UNITS_DATA_TYPE:
     """
     Get generation units data to create them hereafter
     :param pypsa_unit_params_per_agg_pt: dict of per aggreg. prod type main Pypsa params
@@ -127,6 +130,11 @@ def get_generation_units_data(uc_run_params: UCRunParams,
             generation_units_data[country].append(GenerationUnitData(**current_assets_data[agg_pt]))
     return generation_units_data
 
+
+def overwrite_gen_units_fuel_src_params(generation_units_data: GEN_UNITS_DATA_TYPE, updated_fuel_sources_params: Dict[str, Dict[str, float]]) -> GEN_UNITS_DATA_TYPE:
+    for country, units_data in generation_units_data.items():
+        # TODO: from units data info on fuel source extract and apply updated params values
+        updated_fuel_sources_params = bob
 
 def control_min_pypsa_params_per_gen_units(generation_units_data: Dict[str, List[GenerationUnitData]],
                                            pypsa_min_unit_params_per_agg_pt: Dict[str, List[str]]):
