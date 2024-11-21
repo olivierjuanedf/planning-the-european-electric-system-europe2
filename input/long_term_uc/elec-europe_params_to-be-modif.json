@@ -9,7 +9,7 @@
     "benelux",
     "scandinavia"
   ],
-  "selected_target_year": 2033,
+  "selected_target_year": 2025,
   "selected_prod_types": {
     "benelux": ["all"],
     "france": ["all"],
@@ -20,7 +20,7 @@
     "scandinavia": ["all"]
   },
   "uc_period_start": "1900/1/1",
-  "uc_period_end": "1900/1/15",
+  "uc_period_end": "1900/12/31",
   "failure_power_capa": 1e10,
   "failure_penalty": 1e5,
   "interco_capas_updated_values": {

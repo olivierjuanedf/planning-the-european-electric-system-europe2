@@ -34,7 +34,8 @@
       },
       "poland": {
         "hydro_reservoir" : 750,
-        "solar_pv" : 16049.00
+        "solar_pv" : 22929.11,
+        "coal" : 0
       },
       "italy": {
         "hydro_reservoir" : 16000,
