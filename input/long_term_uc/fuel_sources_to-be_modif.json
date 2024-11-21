@@ -1,0 +1,42 @@
+{
+    "biofuel": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "batteries": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "coal": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "dsr": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "gas": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "nuclear": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "oil": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "others_fatal": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "wind_offshore": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "wind_onshore": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    }
+  }
