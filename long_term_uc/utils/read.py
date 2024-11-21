@@ -96,6 +96,7 @@ def read_and_check_uc_run_params():
     uc_run_params = UCRunParams(**json_params_tb_modif, **countries_data, 
                                 updated_fuel_sources_params=json_fuel_sources_tb_modif)
     uc_run_params.process(available_countries=eraa_data_descr.available_countries)
+    uc_run_params.set_is_stress_test(avail_cy_stress_test=eraa_data_descr.available_climatic_years_stress_test)
     uc_run_params.coherence_check(eraa_data_descr=eraa_data_descr, 
                                   year=uc_run_params.selected_target_year)
 

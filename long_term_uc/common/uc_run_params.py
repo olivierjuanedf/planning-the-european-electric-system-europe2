@@ -37,6 +37,8 @@ class UCRunParams:
     interco_capas_updated_values: Union[Dict[str, float], Dict[Tuple[str, str], float]] = field(default_factory=dict)
     updated_capacities_prod_types: Dict[str, Optional[Dict[str, float]]] = field(default_factory=dict)
     updated_fuel_sources_params: Dict[str, Dict[str, Optional[float]]] = None
+    # to indicate that some parameters have been changed compared to the set of the ones used for CP decision-making
+    is_stress_test: bool = None 
 
     def __repr__(self):
         repr_str = "UC long-term model run with params:"
@@ -83,6 +85,9 @@ class UCRunParams:
             if len(new_params) > 0:
                 new_updated_fuel_source_params[source] = new_params
         self.updated_fuel_sources_params = new_updated_fuel_source_params
+
+    def set_is_stress_test(self, avail_cy_stress_test: List[int]):
+        self.is_stress_test = self.selected_target_year in avail_cy_stress_test
 
     def coherence_check(self, eraa_data_descr: ERAADatasetDescr, year: int):
         errors_list = []
