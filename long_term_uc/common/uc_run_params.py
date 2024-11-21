@@ -87,7 +87,7 @@ class UCRunParams:
         self.updated_fuel_sources_params = new_updated_fuel_source_params
 
     def set_is_stress_test(self, avail_cy_stress_test: List[int]):
-        self.is_stress_test = self.selected_target_year in avail_cy_stress_test
+        self.is_stress_test = self.selected_climatic_year in avail_cy_stress_test
 
     def coherence_check(self, eraa_data_descr: ERAADatasetDescr, year: int):
         errors_list = []
