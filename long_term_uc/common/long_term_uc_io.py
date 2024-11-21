@@ -60,6 +60,7 @@ INPUT_LT_UC_SUBFOLDER = f"{INPUT_FOLDER}/long_term_uc"
 INPUT_LT_UC_COUNTRY_SUBFOLDER = f"{INPUT_LT_UC_SUBFOLDER}/countries"
 INPUT_FUNC_PARAMS_SUBFOLDER = f"{INPUT_FOLDER}/functional_params"
 INTERCO_STR_SEP = "2"
+INPUT_CY_STRESS_TEST_SUBFOLDER = "cy_stress-test"
 # first date in ERAA data (fictive 364 days calendar)
 MIN_DATE_IN_DATA = datetime(year=1900, month=1, day=1)
 # first date NOT in ERAA data (fictive 364 days calendar)

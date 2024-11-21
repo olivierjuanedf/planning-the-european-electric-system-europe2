@@ -6,7 +6,7 @@ from datetime import datetime
 from long_term_uc.common.constants_datatypes import DATATYPE_NAMES
 from long_term_uc.common.error_msgs import print_out_msg
 from long_term_uc.common.long_term_uc_io import INPUT_ERAA_FOLDER, DT_SUBFOLDERS, DT_FILE_PREFIX, COLUMN_NAMES, \
-    FILES_FORMAT, DATE_FORMAT, GEN_CAPA_SUBDT_COLS
+    FILES_FORMAT, DATE_FORMAT, GEN_CAPA_SUBDT_COLS, INPUT_CY_STRESS_TEST_SUBFOLDER
 from long_term_uc.common.uc_run_params import UCRunParams
 from long_term_uc.utils.basic_utils import str_sanitizer
 from long_term_uc.utils.df_utils import cast_df_col_as_date, concatenate_dfs, selec_in_df_based_on_list, \
@@ -59,7 +59,7 @@ def select_interco_capas(df_intercos_capa: pd.DataFrame, countries: List[str]) -
 
 
 def get_countries_data(uc_run_params: UCRunParams, agg_prod_types_with_cf_data: List[str],
-                       aggreg_prod_types_def: Dict[str, List[str]]) \
+                       aggreg_prod_types_def: Dict[str, List[str]], is_stress_test: bool = False) \
                         -> (Dict[str, pd.DataFrame], Dict[str, pd.DataFrame], 
                             Dict[str, pd.DataFrame], Dict[Tuple[str, str], float]):
     """
@@ -116,8 +116,12 @@ def get_countries_data(uc_run_params: UCRunParams, agg_prod_types_with_cf_data: 
         current_suffix = f"{year}_{country}"  # common suffix to all ERAA data files
         # get demand
         print("Get demand")
-        current_df_demand = pd.read_csv(f"{demand_folder}/{demand_prefix}_{current_suffix}.csv",
-                                        sep=column_sep, decimal=decimal_sep)
+        if is_stress_test is True:
+            demand_folder_full = f"{demand_folder}/{INPUT_CY_STRESS_TEST_SUBFOLDER}"
+        else:
+             demand_folder_full = f"{demand_folder}"
+        demand_file = f"{demand_folder_full}/{demand_prefix}_{current_suffix}.csv"
+        current_df_demand = pd.read_csv(demand_file, sep=column_sep, decimal=decimal_sep)
         # then keep only selected period date range and climatic year
         demand[country] = filter_input_data(df=current_df_demand, date_col=date_col, 
                                             climatic_year_col=climatic_year_col, period_start=period_start,
@@ -133,7 +137,12 @@ def get_countries_data(uc_run_params: UCRunParams, agg_prod_types_with_cf_data: 
                 print(n_spaces_msg * " " + f"- For aggreg. prod. type: {agg_prod_type}")
                 current_agg_pt_df_res_cf_list = []
                 for prod_type in aggreg_pt_cf_def[agg_prod_type]:
-                    cf_data_file = f"{res_cf_folder}/{res_cf_prefix}_{prod_type}_{current_suffix}.csv"
+                    if is_stress_test is True:
+                        res_cf_folder_full = f"{res_cf_folder}/{INPUT_CY_STRESS_TEST_SUBFOLDER}"
+                    else:
+                        res_cf_folder_full = f"{res_cf_folder}"
+                    cf_filename = f"{res_cf_prefix}_{prod_type}_{current_suffix}.csv" 
+                    cf_data_file = f"{res_cf_folder_full}/{cf_filename}"
                     if os.path.exists(cf_data_file) is False:
                         print(2*n_spaces_msg * " " + f"[WARNING] RES capa. factor data file does not exist: {prod_type} not accounted for here")
                     else:
