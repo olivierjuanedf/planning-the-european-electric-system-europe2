@@ -36,6 +36,7 @@ class UCRunParams:
     failure_penalty: float = None
     interco_capas_updated_values: Union[Dict[str, float], Dict[Tuple[str, str], float]] = field(default_factory=dict)
     updated_capacities_prod_types: Dict[str, Optional[Dict[str, float]]] = field(default_factory=dict)
+    updated_fuel_sources_params: Dict[str, Dict[str, Optional[float]]] = None
 
     def __repr__(self):
         repr_str = "UC long-term model run with params:"
@@ -75,6 +76,13 @@ class UCRunParams:
         print('*'*30)
         print(self.selected_prod_types)
         print('*'*30)
+        # keep only updated source params values that are non None
+        new_updated_fuel_source_params = {}
+        for source, params in self.updated_fuel_sources_params.items():
+            new_params = {name: val for name, val in params.items() if val is not None}
+            if len(new_params) > 0:
+                new_updated_fuel_source_params[source] = new_params
+        self.updated_fuel_sources_params = new_updated_fuel_source_params
 
     def coherence_check(self, eraa_data_descr: ERAADatasetDescr, year: int):
         errors_list = []
@@ -101,7 +109,8 @@ class UCRunParams:
             and self.selected_target_year not in eraa_data_descr.available_target_years:
             errors_list.append(f"Unknown target year {self.selected_target_year}")
         if isinstance(self.selected_climatic_year, int) \
-            and self.selected_climatic_year not in eraa_data_descr.available_climatic_years:
+            and (self.selected_climatic_year not in eraa_data_descr.available_climatic_years \
+                 and self.selected_climatic_year not in eraa_data_descr.available_climatic_years_stress_test):
             errors_list.append(f"Unknown climatic year {self.selected_climatic_year}")
 
         for elt_country, current_agg_pt in self.selected_prod_types.items():
@@ -142,6 +151,12 @@ class UCRunParams:
             errors_list.append(f"UC period start {self.uc_period_start.strftime(DATE_FORMAT)} not in allowed period {allowed_period_msg}")
         if not (MIN_DATE_IN_DATA <= self.uc_period_end <= MAX_DATE_IN_DATA):
             errors_list.append(f"UC period end {self.uc_period_end.strftime(DATE_FORMAT)} not in allowed period {allowed_period_msg}")
+
+        # updated fuel sources params -> check non-negative marginal cost and CO2 emission values
+        for source, params in self.updated_fuel_sources_params.items():
+            for name, val in params.items():
+                if val < 0:
+                    errors_list.append(f"Updated fuel source {source} param {name} must be non-negative; but value read {val}")
 
         # stop if any error
         if len(errors_list) > 0:

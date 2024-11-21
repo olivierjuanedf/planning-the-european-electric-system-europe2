@@ -1,10 +1,8 @@
 import json
-import os
 
 from long_term_uc.common.long_term_uc_io import get_json_usage_params_file, get_json_fixed_params_file, \
-    get_json_eraa_avail_values_file, \
-    get_json_params_tb_modif_file, get_json_pypsa_static_params_file, get_json_params_modif_country_files, \
-    INPUT_LT_UC_COUNTRY_SUBFOLDER
+    get_json_eraa_avail_values_file, get_json_params_tb_modif_file, get_json_pypsa_static_params_file, \
+        get_json_params_modif_country_files, get_json_fuel_sources_tb_modif_file, INPUT_LT_UC_COUNTRY_SUBFOLDER
 from long_term_uc.common.constants_extract_eraa_data import USAGE_PARAMS_SHORT_NAMES, ERAADatasetDescr, \
     PypsaStaticParams, UsageParameters
 from long_term_uc.common.uc_run_params import UCRunParams
@@ -29,6 +27,7 @@ def read_and_check_uc_run_params():
     json_fixed_params_file = get_json_fixed_params_file()
     json_eraa_avail_values_file = get_json_eraa_avail_values_file()
     json_params_tb_modif_file = get_json_params_tb_modif_file()
+    json_fuel_sources_tb_modif_file = get_json_fuel_sources_tb_modif_file()
     # TODO[ATHENS]: read 3 JSON files then func check_and_run UC (allow)
     # for the students script (i) call read + (ii) own loop changing parameters (iii) call check_and_run
     # WITH run_name param to identify file with output results (if None no suffix added)
@@ -49,6 +48,9 @@ def read_and_check_uc_run_params():
     json_params_fixed |= json_eraa_avail_values
     json_params_tb_modif = check_and_load_json_file(json_file=json_params_tb_modif_file,
                                                     file_descr="JSON params to be modif.")
+    # fuel sources values modif.
+    json_fuel_sources_tb_modif = check_and_load_json_file(json_file=json_fuel_sources_tb_modif_file,
+                                                          file_descr="JSON fuel sources params to be modif.")
     # check that modifications in JSON in which it is allowed are allowed/coherent
     print_out_msg(msg_level="info", 
                   msg="... and check that modifications done are coherent with available ERAA data")
@@ -91,7 +93,8 @@ def read_and_check_uc_run_params():
             json_params_tb_modif['selected_prod_types'][c] = v
         del countries_data['selected_prod_types']
 
-    uc_run_params = UCRunParams(**json_params_tb_modif, **countries_data)
+    uc_run_params = UCRunParams(**json_params_tb_modif, **countries_data, 
+                                updated_fuel_sources_params=json_fuel_sources_tb_modif)
     uc_run_params.process(available_countries=eraa_data_descr.available_countries)
     uc_run_params.coherence_check(eraa_data_descr=eraa_data_descr, 
                                   year=uc_run_params.selected_target_year)

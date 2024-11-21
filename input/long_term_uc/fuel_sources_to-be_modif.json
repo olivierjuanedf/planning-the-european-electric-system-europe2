@@ -1,0 +1,70 @@
+{
+    "batteries": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "biofuel": {
+      "marginal_cost": 1,
+      "co2_emissions": null
+    },
+    "coal": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "dsr": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "gas": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "hydro_pondage": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "hydro_pump_storage_closed_loop": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "hydro_pump_storage_open_loop": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "hydro_reservoir": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "hydro_run_of_river": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "nuclear": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "oil": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "others_fatal": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "solar_pv": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "solar_thermal": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "wind_offshore": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    },
+    "wind_onshore": {
+      "marginal_cost": null,
+      "co2_emissions": null
+    }
+  }

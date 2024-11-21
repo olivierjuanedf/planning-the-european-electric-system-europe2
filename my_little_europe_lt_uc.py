@@ -14,7 +14,7 @@ from long_term_uc.utils.basic_utils import get_period_str
 from long_term_uc.include.dataset_builder import get_generation_units_data, control_min_pypsa_params_per_gen_units
 from long_term_uc.utils.read import read_and_check_pypsa_static_params
 from long_term_uc.include.dataset_builder import init_pypsa_network, add_gps_coordinates, add_energy_carrier, \
-  add_generators, add_loads, add_interco_links, save_lp_model, get_stationary_batt_opt_dec
+  add_generators, add_loads, add_interco_links, save_lp_model, overwrite_gen_units_fuel_src_params
 from long_term_uc.common.fuel_sources import FUEL_SOURCES
 
 usage_params, eraa_data_descr, uc_run_params = read_and_check_uc_run_params()
@@ -40,6 +40,10 @@ generation_units_data = \
 for country, val in generation_units_data.items():
     for i in range(len(val)):
         val[i].committable = False
+# TODO: connect this properly
+#if len(uc_run_params.updated_fuel_sources_params) > 0:
+#   generation_units_data = overwrite_gen_units_fuel_src_params(generation_units_data=generation_units_data, 
+#                                                               updated_fuel_sources_params=uc_run_params.updated_fuel_sources_params)
 
 print("Check that 'minimal' PyPSA parameters for unit creation have been provided (in JSON files)/read (from ERAA data)")
 pypsa_static_params = read_and_check_pypsa_static_params()
