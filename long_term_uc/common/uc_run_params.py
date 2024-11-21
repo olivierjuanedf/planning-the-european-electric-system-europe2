@@ -109,7 +109,8 @@ class UCRunParams:
             and self.selected_target_year not in eraa_data_descr.available_target_years:
             errors_list.append(f"Unknown target year {self.selected_target_year}")
         if isinstance(self.selected_climatic_year, int) \
-            and self.selected_climatic_year not in eraa_data_descr.available_climatic_years:
+            and (self.selected_climatic_year not in eraa_data_descr.available_climatic_years \
+                 and self.selected_climatic_year not in eraa_data_descr.available_climatic_years_stress_test):
             errors_list.append(f"Unknown climatic year {self.selected_climatic_year}")
 
         for elt_country, current_agg_pt in self.selected_prod_types.items():
