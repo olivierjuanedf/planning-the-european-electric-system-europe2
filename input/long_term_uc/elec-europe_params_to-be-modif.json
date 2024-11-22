@@ -1,51 +1,65 @@
 {
-  "selected_climatic_year": 1989,
-  "selected_countries": [
-    "france",
-    "italy",
-    "germany",
-    "iberian-peninsula",
-    "poland",
-    "benelux",
-    "scandinavia"
-  ],
-  "selected_target_year": 2025,
-  "selected_prod_types": {
-    "benelux": ["all"],
-    "france": ["all"],
-    "germany": ["all"],
-    "iberian-peninsula": ["all"],
-    "italy": ["all"],
-    "poland": ["all"],
-    "scandinavia": ["all"]
-  },
-  "uc_period_start": "1900/1/1",
-  "uc_period_end": "1900/1/15",
-  "failure_power_capa": 5e10,
-  "failure_penalty": 100,
-  "interco_capas_updated_values": {
-    "france2poland": 0,
-    "france2scandinavia": 0,
-    "italy2iberian-peninsula": 0,
-    "italy2poland": 0,
-    "italy2benelux": 0,
-    "italy2scandinavia": 0,
-    "germany2iberian-peninsula": 0,
-    "iberian-peninsula2italy": 0,
-    "iberian-peninsula2germany": 0,
-    "iberian-peninsula2poland": 0,
-    "iberian-peninsula2benelux": 0,
-    "iberian-peninsula2scandinavia": 0,
-    "poland2france": 0,
-    "poland2italy": 0,
-    "poland2iberian-peninsula": 0,
-    "poland2benelux": 0,
-    "benelux2italy": 0,
-    "benelux2iberian-peninsula": 0,
-    "benelux2poland": 0,
-    "scandinavia2france": 0,
-    "scandinavia2italy": 0,
-    "scandinavia2iberian-peninsula": 0,
-    "germany2italy": 1e5
-  }
+    "selected_climatic_year": 1989,
+    "selected_countries": [
+        "france",
+        "italy",
+        "germany",
+        "iberian-peninsula",
+        "poland",
+        "benelux",
+        "scandinavia"
+    ],
+    "selected_target_year": 2025,
+    "selected_prod_types": {
+        "benelux": [
+            "all"
+        ],
+        "france": [
+            "all"
+        ],
+        "germany": [
+            "all"
+        ],
+        "iberian-peninsula": [
+            "all"
+        ],
+        "italy": [
+            "all"
+        ],
+        "poland": [
+            "all"
+        ],
+        "scandinavia": [
+            "all"
+        ]
+    },
+    "uc_period_start": "1900/1/1",
+    "uc_period_end": "1900/1/15",
+    "failure_power_capa": 50000000000.0,
+    "failure_penalty": 1000,
+    "interco_capas_updated_values": {
+        "france2poland": 0,
+        "france2scandinavia": 0,
+        "italy2iberian-peninsula": 0,
+        "italy2poland": 0,
+        "italy2benelux": 0,
+        "italy2scandinavia": 0,
+        "germany2iberian-peninsula": 0,
+        "iberian-peninsula2italy": 0,
+        "iberian-peninsula2germany": 0,
+        "iberian-peninsula2poland": 0,
+        "iberian-peninsula2benelux": 0,
+        "iberian-peninsula2scandinavia": 0,
+        "poland2france": 0,
+        "poland2italy": 0,
+        "poland2iberian-peninsula": 0,
+        "poland2benelux": 0,
+        "benelux2italy": 0,
+        "benelux2iberian-peninsula": 0,
+        "benelux2poland": 0,
+        "scandinavia2france": 0,
+        "scandinavia2italy": 0,
+        "scandinavia2iberian-peninsula": 0,
+        "germany2italy": 100000.0
+    }
 }

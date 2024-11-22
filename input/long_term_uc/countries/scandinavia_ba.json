@@ -16,17 +16,17 @@
   },
   "updated_capacities_prod_types": {
     "scandinavia": {
-      "wind_offshore": 1000000.30,
-      "gas": 100000000.86,
-      "others_fatal": 100000000.0,
-      "dsr": 1000000.60,
-      "hydro_reservoir": 10000000.27,
-      "batteries": 100000000.00,
-      "coal": 10000000.00,
-      "oil": 10000000.00,
-      "wind_onshore": 100000.31,
-      "biofuel": 10000000.41,
-      "nuclear": 1000000.0
+      "wind_offshore": 2447.30,
+      "gas": 3324.86,
+      "others_fatal": 0.0,
+      "dsr": 10524.60,
+      "hydro_reservoir": 44482.27,
+      "batteries": 0.00,
+      "coal": 0.00,
+      "oil": 0.00,
+      "wind_onshore": 39318.31,
+      "biofuel": 3273.41,
+      "nuclear": 15277.0
     },
     "italy": {
       "wind_offshore": 2447.30,
@@ -78,5 +78,18 @@
       "dsr": 10524.60,
       "nuclear": 15277.0
     }
+  },  
+  "interco_capas_updated_values": {
+    "benelux2france": 0.0,
+    "benelux2germany": 0.0,
+    "benelux2scandinavia": 0.0,
+    "france2benelux": 0.0,
+    "france2germany": 0.0,
+    "france2italy": 0.0,
+    "germany2scandinavia": 100000000.0,
+    "iberian-peninsula2france": 0.0,
+    "poland2germany": 0.0,
+    "poland2scandinavia": 0.0,
+    "scandinavia2germany": 0.0
   }
 }

@@ -1,0 +1,96 @@
+{
+  "team": "scandinavia",
+  "selected_prod_types": {
+    "scandinavia": [
+      "wind_offshore",
+      "gas",
+      "others_fatal",
+      "dsr",
+      "coal",
+      "oil",
+      "wind_onshore",
+      "biofuel",
+      "nuclear",
+      "failure"
+    ]
+  },
+  "updated_capacities_prod_types": {
+    "scandinavia": {
+      "wind_offshore": 1223.65,
+      "gas": 1662.43,
+      "others_fatal": 0.0,
+      "dsr": 5262.3,
+      "hydro_reservoir": 44482.27,
+      "batteries": 0.0,
+      "coal": 22241.135,
+      "oil": 0.0,
+      "wind_onshore": 0.0,
+      "biofuel": 0.0,
+      "nuclear": 19659.155
+    },
+    "italy": {
+      "wind_offshore": 2447.3,
+      "gas": 3324.86,
+      "others_fatal": 0.0,
+      "dsr": 10524.6,
+      "batteries": 0.0,
+      "coal": 0.0,
+      "oil": 0.0,
+      "wind_onshore": 39318.31,
+      "solar_pv": 0.0,
+      "nuclear": 15277.0
+    },
+    "iberian-peninsula": {
+      "wind_offshore": 2447.3,
+      "gas": 3324.86,
+      "others_fatal": 0.0,
+      "dsr": 10524.6,
+      "batteries": 0.0,
+      "coal": 0.0,
+      "oil": 0.0,
+      "wind_onshore": 39318.31,
+      "nuclear": 15277.0
+    },
+    "poland": {
+      "gas": 1636.705,
+      "others_fatal": 7638.5,
+      "coal": 1223.65,
+      "wind_onshore": 1662.43,
+      "biofuel": 0.0
+    },
+    "benelux": {
+      "wind_offshore": 5262.3,
+      "gas": 0.0,
+      "others_fatal": 0.0,
+      "dsr": 0.0,
+      "batteries": 19659.155,
+      "coal": 0.0,
+      "oil": 7638.5,
+      "wind_onshore": 1223.65,
+      "biofuel": 1662.43,
+      "nuclear": 0.0
+    },
+    "france": {
+      "wind_offshore": 5262.3,
+      "gas": 0.0,
+      "others_fatal": 0.0,
+      "coal": 0.0,
+      "dsr": 19659.155,
+      "nuclear": 7638.5
+    }
+  },
+  "interco_capas_updated_values": {
+    "benelux2france": 1662.43,
+    "benelux2germany": 0.0,
+    "benelux2scandinavia": 0.0,
+    "france2benelux": 19659.155,
+    "france2germany": 1636.705,
+    "france2italy": 1223.65,
+    "germany2scandinavia": 1662.43,
+    "iberian-peninsula2france": 0.0,
+    "poland2germany": 5262.3,
+    "poland2scandinavia": 0.0,
+    "scandinavia2germany": 0.0,
+    "iberian_peninsula2france": 0.0
+  }
+}

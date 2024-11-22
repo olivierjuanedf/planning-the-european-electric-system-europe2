@@ -1,0 +1,55 @@
+{
+  "test_parameters": {
+    "scandinavia": {
+      "wind_offshore": 1223.65,
+      "gas": 1662.43,
+      "others_fatal": 0.0,
+      "dsr": 5525.415000000001,
+      "coal": 22241.135,
+      "oil": 0.0,
+      "wind_onshore": 0.0,
+      "biofuel": 0.0,
+      "nuclear": 19659.155
+    },
+    "poland": {
+      "gas": 1636.705,
+      "others_fatal": 7638.5,
+      "coal": 1223.65,
+      "wind_onshore": 1662.43,
+      "biofuel": 0.0
+    },
+    "benelux": {
+      "wind_offshore": 5262.3,
+      "gas": 0.0,
+      "others_fatal": 0.0,
+      "dsr": 0.0,
+      "batteries": 19659.155,
+      "coal": 0.0,
+      "oil": 7638.5,
+      "wind_onshore": 1223.65,
+      "biofuel": 1662.43,
+      "nuclear": 0.0
+    },
+    "france": {
+      "wind_offshore": 5262.3,
+      "gas": 0.0,
+      "others_fatal": 0.0,
+      "coal": 0.0,
+      "dsr": 19659.155,
+      "nuclear": 7638.5
+    },
+    "interconnections": {
+      "benelux2france": 1662.43,
+      "benelux2germany": 0.0,
+      "benelux2scandinavia": 0.0,
+      "france2benelux": 19659.155,
+      "france2germany": 1636.705,
+      "france2italy": 1223.65,
+      "germany2scandinavia": 1662.43,
+      "iberian_peninsula2france": 0.0,
+      "poland2germany": 5262.3,
+      "poland2scandinavia": 0.0,
+      "scandinavia2germany": 0.0
+    }
+  }
+}
