@@ -13,24 +13,37 @@
       ],
       "france": [
         "all"
+      ],
+      "iberian-peninsula" : [
+        "all"
+      ],
+      "germany" : [
+        "all"
+      ],
+      "benelux" : [
+        "all"
       ]
     },
     "updated_capacities_prod_types": {
       "france": {
         "hydro_reservoir" : 23400,
-        "solar_pv" : 18184.99
+        "solar_pv" : 18184.99,
+        "coal" : 0
       },
       "scandinavia": {
         "hydro_reservoir" : 54264,
-        "solar_pv" : 12108.45
+        "solar_pv" : 12108.45,
+        "coal" :0
       },
       "germany": {
         "hydro_reservoir" : 5200,
-        "solar_pv" : 88447.85
+        "solar_pv" : 88447.85,
+        "coal" : 0
       },
-      "iberian": {
+      "iberian-peninsula": {
         "hydro_reservoir" : 19000,
-        "solar_pv" : 40177.08
+        "solar_pv" : 40177.08,
+        "coal" : 0
       },
       "poland": {
         "hydro_reservoir" : 750,
@@ -39,11 +52,13 @@
       },
       "italy": {
         "hydro_reservoir" : 16000,
-        "solar_pv" : 39954.39
+        "solar_pv" : 39954.39,
+        "coal" : 0
       },
       "benelux": {
         "hydro_reservoir" : 200,
-        "solar_pv" : 47892.74
+        "solar_pv" : 47892.74,
+        "coal" : 0
       }
     }    
   }
